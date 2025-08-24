@@ -2,21 +2,21 @@
  Global Styles
 ================================ */
 * {
-  margin: 0;
-  padding: 0;
+  margin    : 0;
+  padding   : 0;
   box-sizing: border-box;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background: #fafafa;
+  color      : #333;
+  background : #fafafa;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color          : inherit;
 }
 
 ul {
@@ -24,9 +24,9 @@ ul {
 }
 
 .container {
-  width: 90%;
+  width    : 90%;
   max-width: 1200px;
-  margin: auto;
+  margin   : auto;
 }
 
 /* ================================
@@ -34,30 +34,30 @@ ul {
 ================================ */
 header {
   background: #111;
-  color: #fff;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  color     : #fff;
+  padding   : 15px 0;
+  position  : sticky;
+  top       : 0;
+  z-index   : 1000;
 }
 
 .logoText {
-  font-size: 1.6rem;
+  font-size  : 1.6rem;
   font-weight: bold;
-  color: #00adb5;
+  color      : #00adb5;
 }
 
 .navCol ul {
-  display: flex;
+  display        : flex;
   justify-content: flex-end;
-  align-items: center;
-  gap: 25px;
+  align-items    : center;
+  gap            : 25px;
 }
 
 .navCol a {
-  color: #fff;
+  color      : #fff;
   font-weight: 500;
-  transition: color 0.3s;
+  transition : color 0.3s;
 }
 
 .navCol a:hover {
@@ -68,16 +68,16 @@ header {
  Banner
 ================================ */
 .bannerSection {
-  padding: 80px 20px;
+  padding   : 80px 20px;
   background: linear-gradient(135deg, #00adb5, #393e46);
-  color: #fff;
+  color     : #fff;
   text-align: center;
 }
 
 .bannerUserImg img {
-  width: 220px;
+  width        : 220px;
   border-radius: 50%;
-  border: 6px solid #fff;
+  border       : 6px solid #fff;
   margin-bottom: 20px;
 }
 
@@ -87,21 +87,21 @@ header {
 
 .bannerSubTitle {
   font-size: 1.2rem;
-  margin: 10px 0 20px;
+  margin   : 10px 0 20px;
 }
 
 .bannerBtnCol .btn {
-  display: inline-block;
-  padding: 10px 20px;
+  display      : inline-block;
+  padding      : 10px 20px;
   border-radius: 6px;
-  font-weight: bold;
-  transition: 0.3s;
-  margin: 5px;
+  font-weight  : bold;
+  transition   : 0.3s;
+  margin       : 5px;
 }
 
 .btnPrimary {
   background: #fff;
-  color: #00adb5;
+  color     : #00adb5;
 }
 
 .btnPrimary:hover {
@@ -110,12 +110,12 @@ header {
 
 .btnOutline {
   border: 2px solid #fff;
-  color: #fff;
+  color : #fff;
 }
 
 .btnOutline:hover {
   background: #fff;
-  color: #00adb5;
+  color     : #00adb5;
 }
 
 /* ================================
@@ -134,13 +134,13 @@ header {
 }
 
 .smTitle {
-  font-size: 1.3rem;
-  color: #00adb5;
+  font-size    : 1.3rem;
+  color        : #00adb5;
   margin-bottom: 10px;
 }
 
 .mdTitle {
-  font-size: 1.5rem;
+  font-size  : 1.5rem;
   font-weight: bold;
 }
 
@@ -152,28 +152,28 @@ header {
 }
 
 .progress {
-  background: #ddd;
+  background   : #ddd;
   border-radius: 25px;
-  overflow: hidden;
+  overflow     : hidden;
   margin-bottom: 15px;
 }
 
 .progress-bar {
   background: #00adb5;
-  color: #fff;
+  color     : #fff;
   text-align: center;
-  padding: 5px;
-  font-size: 0.9rem;
+  padding   : 5px;
+  font-size : 0.9rem;
 }
 
 /* ================================
  Portfolio Cards
 ================================ */
 .portfolioCard {
-  background: #fff;
+  background   : #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  padding: 20px;
+  box-shadow   : 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding      : 20px;
   margin-bottom: 25px;
 }
 
@@ -183,13 +183,13 @@ header {
 
 .pCol {
   border-radius: 10px;
-  overflow: hidden;
+  overflow     : hidden;
 }
 
 .pImg {
-  width: 100%;
+  width        : 100%;
   border-radius: 10px;
-  transition: transform 0.4s;
+  transition   : transform 0.4s;
 }
 
 .pImg:hover {
@@ -201,35 +201,35 @@ header {
 ================================ */
 #contact {
   background: #00adb5;
-  color: #fff;
-  padding: 60px 20px;
+  color     : #fff;
+  padding   : 60px 20px;
   text-align: center;
 }
 
 #contact form {
-  max-width: 500px;
-  margin: 20px auto;
+  max-width : 500px;
+  margin    : 20px auto;
   text-align: left;
 }
 
 #contact input,
 #contact textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
+  width        : 100%;
+  padding      : 10px;
+  margin       : 10px 0;
+  border       : none;
   border-radius: 5px;
 }
 
 #contact button {
-  background: #fff;
-  color: #00adb5;
-  padding: 10px 20px;
-  border: none;
+  background   : #fff;
+  color        : #00adb5;
+  padding      : 10px 20px;
+  border       : none;
   border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+  font-weight  : bold;
+  cursor       : pointer;
+  transition   : 0.3s;
 }
 
 #contact button:hover {
@@ -242,43 +242,46 @@ header {
 /* Footer Styling */
 footer {
   background-color: cadetblue;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
+  color           : #fff;
+  text-align      : center;
+  padding         : 20px 0;
 }
 
 /* Remove default list styling */
 footer ul {
-  padding: 0;
-  margin: 0;
+  padding   : 0;
+  margin    : 0;
   list-style: none;
 }
 
 /* Inline icons */
 footer .list-inline-item {
-  margin: 0 10px;
+  margin : 0 10px;
   display: inline-block;
 }
 
 /* Icon images */
 footer .list-inline-item img {
-  width: 32px;   /* same width for all */
-  height: 32px;  /* same height for all */
-  object-fit: contain; /* keep aspect ratio inside square */
+  width     : 32px;
+  /* same width for all */
+  height    : 32px;
+  /* same height for all */
+  object-fit: contain;
+  /* keep aspect ratio inside square */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Hover effect */
 footer .list-inline-item a:hover img {
   transform: scale(1.1);
-  opacity: 0.8;
+  opacity  : 0.8;
 }
 
 /* Copyright text */
 footer p {
-  font-size: 14px;
+  font-size : 14px;
   margin-top: 10px;
-  color: #ccc;
+  color     : #ccc;
 }
 
 /* ================================
@@ -288,6 +291,7 @@ footer p {
   .bannerContent h1 {
     font-size: 2rem;
   }
+
   .bannerSubTitle {
     font-size: 1rem;
   }
@@ -296,13 +300,15 @@ footer p {
 @media (max-width: 768px) {
   .navCol ul {
     flex-direction: column;
-    background: #111;
-    padding: 15px;
-    border-radius: 8px;
+    background    : #111;
+    padding       : 15px;
+    border-radius : 8px;
   }
+
   .bannerUserImg img {
     width: 160px;
   }
+
   .bannerContent h1 {
     font-size: 1.8rem;
   }
@@ -312,60 +318,66 @@ footer p {
   .logoText {
     font-size: 1.2rem;
   }
+
   .bannerSection {
     padding: 50px 15px;
   }
+
   .bannerContent h1 {
     font-size: 1.5rem;
   }
+
   .bannerSubTitle {
     font-size: 0.9rem;
   }
+
   .btn {
-    padding: 8px 15px;
+    padding  : 8px 15px;
     font-size: 0.85rem;
   }
 }
+
 /* Sticky Header */
 header.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+  position  : fixed;
+  top       : 0;
+  width     : 100%;
   background: #000000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index   : 999;
 }
 
 /* Active link */
 .nav-link.active {
-  color: #0d6efd !important;
+  color      : #0d6efd !important;
   font-weight: bold;
 }
 
 /* Back to Top Button */
 .back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: none;
-  background: #0d6efd;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
+  position     : fixed;
+  bottom       : 20px;
+  right        : 20px;
+  display      : none;
+  background   : #0d6efd;
+  color        : #fff;
+  border       : none;
+  padding      : 10px 15px;
   border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: background 0.3s;
+  cursor       : pointer;
+  font-size    : 18px;
+  box-shadow   : 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition   : background 0.3s;
 }
 
 .back-to-top:hover {
   background: #084298;
 }
+
 /* Dark Mode Styles */
 body.dark-theme {
   background-color: #121212;
-  color: #e0e0e0;
+  color           : #e0e0e0;
 }
 
 body.dark-theme header,
@@ -378,17 +390,17 @@ body.dark-theme .sectionSpace,
 body.dark-theme .innerPageBannerCol,
 body.dark-theme .lightBg {
   background-color: #1f1f1f !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
+  color           : #e0e0e0 !important;
+  border-color    : #333 !important;
 }
 
 body.dark-theme .btn-primary {
   background-color: #0d6efd;
-  border: none;
+  border          : none;
 }
 
 body.dark-theme .btn-outline-primary {
-  color: #e0e0e0;
+  color       : #e0e0e0;
   border-color: #0d6efd;
 }
 
@@ -402,34 +414,65 @@ body.dark-theme .progress-bar {
 
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: #0d6efd;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
+  position     : fixed;
+  bottom       : 80px;
+  right        : 20px;
+  background   : #0d6efd;
+  color        : #fff;
+  border       : none;
+  padding      : 10px 15px;
   border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: background 0.3s;
+  cursor       : pointer;
+  font-size    : 14px;
+  box-shadow   : 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition   : background 0.3s;
 }
 
 .dark-mode-toggle:hover {
   background: #084298;
 }
+
 .profile-img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 5px solid #fff; /* White border */
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  width        : 200px;
+  height       : 200px;
+  object-fit   : cover;
+  border       : 5px solid #fff;
+  /* White border */
+  border-radius: 50%;
+  box-shadow   : 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.logoText {
+  font-weight: bold;
+  font-size  : 1.2rem;
+  color      : #00e0ff !important;
+}
+
 .navbar-toggler {
   border: none;
 }
+
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background   : #111;
+    padding      : 1rem;
+    border-radius: 8px;
+    margin-top   : 0.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    color      : #fff !important;
+    padding    : 0.6rem 0;
+    font-weight: 500;
+    transition : 0.3s;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color       : #00e0ff !important;
+    padding-left: 8px;
+  }
 }
