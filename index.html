@@ -19,33 +19,44 @@ Header / Navbar
 ================================= -->
     <header>
       <div class="headerCol">
-        <div class="container-fluid">
-          <div class="row align-items-center">
-            <div class="logoCol">
-              <span class="logoText">Usman Ali</span>
-            </div>
-            <div class="col">
-              <div class="navCollapseCol">
-                <div class="navCol">
-                  <ul class="nav">
-                    <li class="nav-item">
-                      <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand logoText" href="#">Usman Ali</a>
+
+            <!-- Toggle button -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible Nav Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
+        </nav>
+
       </div>
     </header>
 
@@ -444,36 +455,26 @@ Contact Section
         <p class="pb-md-3">I would love to hear from you! Whether you have a question, want to collaborate on a project, or just want to say hello, feel free to reach out.</p>
         <p class="pb-md-3">You can contact me via email or through the form below. I will do my best to respond as soon as possible.</p>
         <p class="pb-md-3">Thank you for visiting my website, and I look forward to connecting with you!</p>
-        <form class="mx-auto" style="max-width: 600px" action="#" method="post">
-          <div class="mb-3">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              class="form-control"
-            />
-          </div>
-          <div class="mb-3">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              class="form-control"
-            />
-          </div>
-          <div class="mb-3">
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Message"
-              class="form-control"
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <form id="contactForm" class="mx-auto" style="max-width: 600px">
+        <div class="mb-3">
+          <input type="text" id="name" name="name" placeholder="Name" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <input type="email" id="email" name="email" placeholder="Email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <textarea id="message" name="message" rows="4" placeholder="Message" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <script>
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("✅ Your message has been submitted successfully!");
+      });
+      </script>
+
       </div>
     </section>
 
