@@ -41,6 +41,9 @@ Header / Navbar
                   <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="#Skills">Skills</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="#portfolio">Portfolio</a>
                 </li>
                 <li class="nav-item">
@@ -269,9 +272,15 @@ Work Experience
     <!-- ================================
 Skills Section
 ================================= -->
-    <section>
-      <div class="sectionSpace pt-0">
+    <section id="Skills">
+      <div class="sectionSpace">
         <div class="container">
+          <!-- Section Title -->
+          <div class="row pb-3">
+            <div class="col text-center">
+              <h1 class="smText regular">Skills</h1>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-auto">
               <div class="keySkillCol">
@@ -286,14 +295,12 @@ Skills Section
                   </li>
                   <li><strong>Databases:</strong> PostgreSQL, MySQL, SQLite</li>
                   <li>
-                    <strong>DevOps Tools:</strong> Git, Docker, GitHub Actions,
-                    CI/CD
+                    <strong>DevOps Tools:</strong> Git, Docker, GitHub
+                    Actions,Bitbucket, CI/CD
                   </li>
-                  <li><strong>Cloud Platforms:</strong> Vercel</li>
+                  <li><strong>Cloud Platforms:</strong> Vercel,Netlify</li>
                   <li><strong>Testing:</strong> PyTest, Postman</li>
-                  <li>
-                    <strong>APIs:</strong> RESTful APIs, GraphQL, WebSockets
-                  </li>
+                  <li><strong>APIs:</strong> RESTful APIs</li>
                   <li>
                     <strong>Others:</strong> Responsive Design, MVC
                     Architecture, Web Performance Optimization
@@ -305,27 +312,83 @@ Skills Section
               <h4 class="smTitle pb-3"><strong>Coding Skills</strong></h4>
               <ul>
                 <li>
-                  <strong>Languages:</strong> Python, JavaScript, TypeScript,
-                  C++, Java, SQL
+                  <strong>Languages:</strong> Python, JavaScript, TypeScript,SQL
                 </li>
                 <li>
                   <strong>Frontend:</strong> React.js, HTML5, CSS3, Tailwind,
-                  Bootstrap
                 </li>
                 <li>
-                  <strong>Backend:</strong> Django, FastAPI, Node.js, Express.js
+                  <strong>Backend:</strong> Flask,Django, FastAPI, Node.js
                 </li>
+                <li><strong>Databases:</strong> PostgreSQL, MySQL, SQLite</li>
                 <li>
-                  <strong>Databases:</strong> PostgreSQL, MySQL, SQLite, MongoDB
-                </li>
-                <li>
-                  <strong>Version Control:</strong> Git, GitHub, GitLab, Docker
+                  <strong>Version Control:</strong> Git, GitHub, GitLab,
+                  Docker,Bitbucket
                 </li>
                 <li>
                   <strong>Problem Solving:</strong> Data Structures, Algorithms,
                   LeetCode, HackerRank
                 </li>
               </ul>
+            </div>
+            <!-- 🔽 Separate Div for Scrolling Skills Logos -->
+            <div class="skills-showcase mt-4">
+              <h4 class="smTitle pb-3 text-center">
+                <strong>Technologies & Tools</strong>
+              </h4>
+              <div class="skills-scroll">
+                <div class="scroll-wrapper">
+                  <div class="skill-item">
+                    <img src="images/python.jpeg" alt="Python" />
+                    <span>Python</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/javascript.jpeg" alt="JavaScript" />
+                    <span>JavaScript</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/react.png" alt="React.js" />
+                    <span>React.js</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/flask.png" alt="Flask" />
+                    <span>Flask</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/django.jpeg" alt="Django" />
+                    <span>Django</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/fastapi.png" alt="FastAPI" />
+                    <span>FastAPI</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/postgresql.png" alt="PostgreSQL" />
+                    <span>PostgreSQL</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/mysql.png" alt="MySQL" />
+                    <span>MySQL</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/docker.png" alt="Docker" />
+                    <span>Docker</span>
+                  </div>
+
+                  <div class="skill-item">
+                    <img src="images/git.png" alt="Git" />
+                    <span>Git</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -341,7 +404,7 @@ Portfolio Section
           <!-- Section Title -->
           <div class="row pb-3">
             <div class="col text-center">
-              <h4 class="smText regular">Portfolio</h4>
+              <h1 class="smText regular">Portfolio</h1>
             </div>
           </div>
 
@@ -397,28 +460,39 @@ Portfolio Section
                 <div class="text-center">
                   <h5 class="pb-2">Employee Information Management System</h5>
                   <p>
-                    This PHP + MySQL system manages employee records, fiscal
-                    years, and tax slabs with CRUD functionality and automated
-                    tax computation logic.
+                    This PHP + MySQL system manages employee records and tax
+                    computations.
                   </p>
-                  <ul class="text-start d-inline-block">
-                    <li>
-                      <strong>Employee Module:</strong> Add/edit/delete employee
-                      data with salary details.
-                    </li>
-                    <li>
-                      <strong>Fiscal Year Module:</strong> Manage fiscal years
-                      linked with tax slabs.
-                    </li>
-                    <li>
-                      <strong>Tax Slab Management:</strong> Define salary
-                      ranges, tax %, and base tax values.
-                    </li>
-                    <li>
-                      <strong>Dynamic Tax Calculation:</strong> Auto-calculates
-                      monthly/annual tax.
-                    </li>
-                  </ul>
+                  <div class="collapse" id="details1">
+                    <ul class="text-start d-inline-block">
+                      <li>
+                        <strong>Employee Module:</strong> Add/edit/delete
+                        employee data with salary details.
+                      </li>
+                      <li>
+                        <strong>Fiscal Year Module:</strong> Manage fiscal years
+                        linked with tax slabs.
+                      </li>
+                      <li>
+                        <strong>Tax Slab Management:</strong> Define salary
+                        ranges, tax %, and base tax values.
+                      </li>
+                      <li>
+                        <strong>Dynamic Tax Calculation:</strong>
+                        Auto-calculates monthly/annual tax.
+                      </li>
+                    </ul>
+                  </div>
+                  <button
+                    class="btn btn-primary btn-sm mt-2"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#details1"
+                    aria-expanded="false"
+                    aria-controls="details1"
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>
@@ -481,28 +555,39 @@ Portfolio Section
                 <div class="text-center">
                   <h5 class="pb-2">Geospatial Data Visualization Web App</h5>
                   <p>
-                    Flask + SQLite app with Leaflet.js maps, GeoJSON rendering,
-                    CRUD operations, and interactive Plotly analytics
-                    dashboards.
+                    Flask + SQLite app with Leaflet.js maps and interactive
+                    analytics.
                   </p>
-                  <ul class="text-start d-inline-block">
-                    <li>
-                      <strong>Interactive Maps:</strong> Multiple basemap layers
-                      with Leaflet.js.
-                    </li>
-                    <li>
-                      <strong>GeoJSON Visualization:</strong> Display points,
-                      lines, and polygons.
-                    </li>
-                    <li>
-                      <strong>Dynamic CRUD:</strong> Manage spatial records via
-                      Flask routes.
-                    </li>
-                    <li>
-                      <strong>Analytics Dashboards:</strong> Plotly bar/stacked
-                      charts in Jinja2.
-                    </li>
-                  </ul>
+                  <div class="collapse" id="details2">
+                    <ul class="text-start d-inline-block">
+                      <li>
+                        <strong>Interactive Maps:</strong> Multiple basemap
+                        layers with Leaflet.js.
+                      </li>
+                      <li>
+                        <strong>GeoJSON Visualization:</strong> Display points,
+                        lines, and polygons.
+                      </li>
+                      <li>
+                        <strong>Dynamic CRUD:</strong> Manage spatial records
+                        via Flask routes.
+                      </li>
+                      <li>
+                        <strong>Analytics Dashboards:</strong> Plotly
+                        bar/stacked charts in Jinja2.
+                      </li>
+                    </ul>
+                  </div>
+                  <button
+                    class="btn btn-primary btn-sm mt-2"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#details2"
+                    aria-expanded="false"
+                    aria-controls="details2"
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>
@@ -533,38 +618,43 @@ Portfolio Section
                     Secure SQL Query Interface with FastAPI & React
                   </h5>
                   <p>
-                    A full-stack web application that enables authenticated
-                    users to submit natural language queries for secure SQL
-                    generation with FastAPI and React.
+                    A full-stack web application that enables secure SQL query
+                    generation.
                   </p>
-                  <ul class="text-start d-inline-block">
-                    <li>
-                      <strong>Authentication System:</strong> JWT-based login
-                      with token access control for protected endpoints.
-                    </li>
-                    <li>
-                      <strong>React Frontend:</strong> Responsive interface
-                      built with React, TypeScript, Tailwind CSS, and React
-                      Router, including session management.
-                    </li>
-                    <li>
-                      <strong>FastAPI Backend:</strong> Secure token-verified
-                      APIs using OAuth2PasswordBearer, Form, and Depends.
-                    </li>
-                    <li>
-                      <strong>Cross-Origin Support:</strong> Configured CORS for
-                      seamless frontend-backend communication.
-                    </li>
-                    <li>
-                      <strong>Other Features:</strong> MySQL-ready database
-                      integration, error handling for token expiry, and clean
-                      routing.
-                    </li>
-                    <li>
-                      <strong>Tech Stack:</strong> FastAPI, JWT, React,
-                      TypeScript, Tailwind CSS, MySQL, React Router DOM.
-                    </li>
-                  </ul>
+                  <div class="collapse" id="details3">
+                    <ul class="text-start d-inline-block">
+                      <li>
+                        <strong>Authentication System:</strong> JWT-based login
+                        with token access control.
+                      </li>
+                      <li>
+                        <strong>React Frontend:</strong> Responsive interface
+                        built with React, TypeScript, Tailwind CSS.
+                      </li>
+                      <li>
+                        <strong>FastAPI Backend:</strong> Secure token-verified
+                        APIs using OAuth2PasswordBearer.
+                      </li>
+                      <li>
+                        <strong>Cross-Origin Support:</strong> Configured CORS
+                        for seamless frontend-backend communication.
+                      </li>
+                      <li>
+                        <strong>Other Features:</strong> MySQL-ready DB
+                        integration, error handling, clean routing.
+                      </li>
+                    </ul>
+                  </div>
+                  <button
+                    class="btn btn-primary btn-sm mt-2"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#details3"
+                    aria-expanded="false"
+                    aria-controls="details3"
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>
@@ -573,7 +663,7 @@ Portfolio Section
             <div class="col-md-6 mb-4">
               <div class="card shadow rounded p-3 h-100">
                 <div
-                  id="projectCarousel1"
+                  id="projectCarousel4"
                   class="carousel slide mb-3"
                   data-bs-ride="carousel"
                 >
@@ -613,224 +703,220 @@ Portfolio Section
                         alt="Employee Tax Report"
                       />
                     </div>
-                    <button
-                      class="carousel-control-prev"
-                      type="button"
-                      data-bs-target="#projectCarousel1"
-                      data-bs-slide="prev"
-                    >
-                      <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button
-                      class="carousel-control-next"
-                      type="button"
-                      data-bs-target="#projectCarousel1"
-                      data-bs-slide="next"
-                    >
-                      <span class="carousel-control-next-icon"></span>
-                    </button>
                   </div>
-                  <div class="text-center">
-                    <h5 class="pb-2">
-                      Full-Stack Web Application & Data Visualization
-                    </h5>
-                    <p>
-                      This full-stack system integrates front-end, mapping,
-                      visualization, reporting, and data management with
-                      automated workflows and modular logic.
-                    </p>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#projectCarousel4"
+                    data-bs-slide="prev"
+                  >
+                    <span class="carousel-control-prev-icon"></span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#projectCarousel4"
+                    data-bs-slide="next"
+                  >
+                    <span class="carousel-control-next-icon"></span>
+                  </button>
+                </div>
+                <div class="text-center">
+                  <h5 class="pb-2">
+                    Full-Stack Web Application & Data Visualization
+                  </h5>
+                  <p>
+                    This full-stack system integrates front-end, mapping, and
+                    reporting.
+                  </p>
+                  <div class="collapse" id="details4">
                     <ul class="text-start d-inline-block">
                       <li>
-                        <strong>Front-End Development:</strong> Designed
-                        responsive web interfaces with consistent typography and
-                        branding using clean UI/UX principles and custom fonts.
-                        Built dynamic dashboards and filterable forms using
-                        HTML, CSS, Jinja2, and Flask templates.
+                        <strong>Front-End Development:</strong> Responsive
+                        dashboards with Flask templates.
                       </li>
                       <li>
-                        <strong>Interactive Mapping:</strong> Developed
-                        real-time, interactive maps using GeoJSON with multiple
-                        base layers, custom marker logic, tooltips, and export
-                        functionality to enhance geospatial insights.
+                        <strong>Interactive Mapping:</strong> Real-time maps
+                        with GeoJSON layers and tooltips.
                       </li>
                       <li>
-                        <strong>Data Visualization:</strong> Built intuitive
-                        stacked bar charts for comparative analysis of
-                        consumption and waste data using dynamic color
-                        assignment, real-time filtering, and session-based
-                        updates.
+                        <strong>Data Visualization:</strong> Stacked bar charts
+                        with dynamic color assignment.
                       </li>
                       <li>
                         <strong>PPT Report Automation:</strong> Automated
-                        PowerPoint generation with python-pptx, embedding
-                        charts, metadata, and uploaded images into exportable
-                        reports.
+                        PowerPoint generation with python-pptx.
                       </li>
                       <li>
-                        <strong>Form & Metadata Management:</strong> Implemented
-                        secure file upload and asset management systems with
-                        validation, structured saving, and cleanup mechanisms.
+                        <strong>Form & Metadata Management:</strong> Secure file
+                        upload & management system.
                       </li>
                       <li>
-                        <strong>Database & Processing:</strong> Structured
-                        SQLAlchemy models for project metadata, implemented
-                        modular color assignment logic for materials, and
-                        processed/normalized data with Pandas for clean,
-                        aggregated reporting.
+                        <strong>Database & Processing:</strong> SQLAlchemy
+                        models, Pandas aggregation, clean reporting.
                       </li>
                     </ul>
                   </div>
+                  <button
+                    class="btn btn-primary btn-sm mt-2"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#details4"
+                    aria-expanded="false"
+                    aria-controls="details4"
+                  >
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- ================================
-
-Technical Skills Progress
-================================= -->
-        <section class="py-5 lightBg">
-          <div class="container">
-            <h3 class="mb-4">Technical Skills</h3>
-            <div class="row g-4">
-              <div class="col-md-6">
-                <label>Python / Django</label>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 90%">90%</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label>JavaScript</label>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 75%">75%</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label>HTML / CSS</label>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 95%">95%</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label>SQL / Databases</label>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 85%">85%</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label>Flask / FastAPI</label>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 70%">70%</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label>Data Visualization</label>
-                <div class="progress">
-                  <div class="progress-bar" style="width: 90%">90%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ================================
-Contact Section
-================================= -->
-        <section id="contact" class="py-5">
-          <div class="container text-center">
-            <h2>Get in Touch</h2>
-            <p class="pb-md-3">
-              I would love to hear from you! Whether you have a question, want
-              to collaborate on a project, or just want to say hello, feel free
-              to reach out.
-            </p>
-            <p class="pb-md-3">
-              You can contact me via email or through the form below. I will do
-              my best to respond as soon as possible.
-            </p>
-            <p class="pb-md-3">
-              Thank you for visiting my website, and I look forward to
-              connecting with you!
-            </p>
-            <form id="contactForm" class="mx-auto" style="max-width: 600px">
-              <div class="mb-3">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Name"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder="Message"
-                  class="form-control"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-
-            <script>
-              document
-                .getElementById("contactForm")
-                .addEventListener("submit", function (e) {
-                  e.preventDefault();
-                  alert("✅ Your message has been submitted successfully!");
-                  this.reset(); // <-- Clears all fields
-                });
-            </script>
-          </div>
-        </section>
-
-        <!-- ================================
-Footer
-================================= -->
-        <footer class="py-4 text-center" style="background-color: #f4f4f9">
-          <div class="container">
-            <ul class="list-inline mb-3">
-              <li class="list-inline-item">
-                <a
-                  href="https://web.facebook.com/profile.php?id=100013992877054"
-                  ><img src="images/fb.svg" alt="Facebook"
-                /></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.instagram.com/callmeusman12"
-                  ><img src="images/insta.svg" alt="Instagram"
-                /></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/Logic-ui"
-                  ><img src="images/github.png" alt="GitHub"
-                /></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/usman-ali-b0603124a/"
-                  ><img src="images/linkedin.svg" alt="LinkedIn"
-                /></a>
-              </li>
-            </ul>
-            <p class="mb-0">© 2025 Usman Ali — All rights reserved</p>
-          </div>
-        </footer>
-        <script src="js/script.js"></script>
       </div>
     </section>
+
+    <!-- ================================
+Technical Skills Progress
+================================= -->
+    <section class="py-5 lightBg">
+      <div class="container">
+        <h3 class="mb-4">Technical Skills</h3>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <label>Python / Django</label>
+            <div class="progress">
+              <div class="progress-bar" style="width: 90%">90%</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>JavaScript</label>
+            <div class="progress">
+              <div class="progress-bar" style="width: 75%">75%</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>HTML / CSS</label>
+            <div class="progress">
+              <div class="progress-bar" style="width: 95%">95%</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>SQL / Databases</label>
+            <div class="progress">
+              <div class="progress-bar" style="width: 85%">85%</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Flask / FastAPI</label>
+            <div class="progress">
+              <div class="progress-bar" style="width: 70%">70%</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label>Data Visualization</label>
+            <div class="progress">
+              <div class="progress-bar" style="width: 90%">90%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+Contact Section
+================================= -->
+    <section id="contact" class="py-5">
+      <div class="container text-center">
+        <h2>Get in Touch</h2>
+        <p class="pb-md-3">
+          I would love to hear from you! Whether you have a question, want to
+          collaborate on a project, or just want to say hello, feel free to
+          reach out.
+        </p>
+        <p class="pb-md-3">
+          You can contact me via email or through the form below. I will do my
+          best to respond as soon as possible.
+        </p>
+        <p class="pb-md-3">
+          Thank you for visiting my website, and I look forward to connecting
+          with you!
+        </p>
+        <form id="contactForm" class="mx-auto" style="max-width: 600px">
+          <div class="mb-3">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Message"
+              class="form-control"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <script>
+          document
+            .getElementById("contactForm")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+              alert("✅ Your message has been submitted successfully!");
+              this.reset(); // <-- Clears all fields
+            });
+        </script>
+      </div>
+    </section>
+
+    <!-- ================================
+Footer
+================================= -->
+    <footer class="py-4 text-center" style="background-color: #f4f4f9">
+      <div class="container">
+        <ul class="list-inline mb-3">
+          <li class="list-inline-item">
+            <a href="https://web.facebook.com/profile.php?id=100013992877054"
+              ><img src="images/fb.svg" alt="Facebook"
+            /></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.instagram.com/callmeusman12"
+              ><img src="images/insta.svg" alt="Instagram"
+            /></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/Logic-ui"
+              ><img src="images/github.png" alt="GitHub"
+            /></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/usman-ali-b0603124a/"
+              ><img src="images/linkedin.svg" alt="LinkedIn"
+            /></a>
+          </li>
+        </ul>
+        <p class="mb-0">© 2025 Usman Ali — All rights reserved</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
