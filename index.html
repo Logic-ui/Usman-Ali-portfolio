@@ -411,14 +411,16 @@ Portfolio Section
             </div>
           </div>
 
+          <!-- All projects in one responsive row; 4 per line on md+ -->
           <div class="row">
             <!-- Project 1 -->
-            <div class="col-md-6 mb-4">
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
               <div class="card shadow rounded p-3 h-100">
                 <div
                   id="projectCarousel1"
                   class="carousel slide mb-3"
                   data-bs-ride="carousel"
+                  aria-label="Employee Information Management System Screenshots"
                 >
                   <div class="carousel-inner text-center">
                     <div class="carousel-item active">
@@ -448,6 +450,7 @@ Portfolio Section
                     type="button"
                     data-bs-target="#projectCarousel1"
                     data-bs-slide="prev"
+                    aria-label="Previous"
                   >
                     <span class="carousel-control-prev-icon"></span>
                   </button>
@@ -456,6 +459,7 @@ Portfolio Section
                     type="button"
                     data-bs-target="#projectCarousel1"
                     data-bs-slide="next"
+                    aria-label="Next"
                   >
                     <span class="carousel-control-next-icon"></span>
                   </button>
@@ -466,8 +470,8 @@ Portfolio Section
                     This PHP + MySQL system manages employee records and tax
                     computations.
                   </p>
-                  <div class="collapse" id="details1">
-                    <ul class="text-start d-inline-block">
+                  <div class="collapse" id="details-1">
+                    <ul class="text-start d-inline-block mb-0">
                       <li>
                         <strong>Employee Module:</strong> Add/edit/delete
                         employee data with salary details.
@@ -490,9 +494,9 @@ Portfolio Section
                     class="btn btn-primary btn-sm mt-2"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#details1"
+                    data-bs-target="#details-1"
                     aria-expanded="false"
-                    aria-controls="details1"
+                    aria-controls="details-1"
                   >
                     View Details
                   </button>
@@ -501,12 +505,13 @@ Portfolio Section
             </div>
 
             <!-- Project 2 -->
-            <div class="col-md-6 mb-4">
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
               <div class="card shadow rounded p-3 h-100">
                 <div
                   id="projectCarousel2"
                   class="carousel slide mb-3"
                   data-bs-ride="carousel"
+                  aria-label="Geospatial Data Visualization Web App Screenshots"
                 >
                   <div class="carousel-inner text-center">
                     <div class="carousel-item active">
@@ -543,6 +548,7 @@ Portfolio Section
                     type="button"
                     data-bs-target="#projectCarousel2"
                     data-bs-slide="prev"
+                    aria-label="Previous"
                   >
                     <span class="carousel-control-prev-icon"></span>
                   </button>
@@ -551,6 +557,7 @@ Portfolio Section
                     type="button"
                     data-bs-target="#projectCarousel2"
                     data-bs-slide="next"
+                    aria-label="Next"
                   >
                     <span class="carousel-control-next-icon"></span>
                   </button>
@@ -561,8 +568,8 @@ Portfolio Section
                     Flask + SQLite app with Leaflet.js maps and interactive
                     analytics.
                   </p>
-                  <div class="collapse" id="details2">
-                    <ul class="text-start d-inline-block">
+                  <div class="collapse" id="details-2">
+                    <ul class="text-start d-inline-block mb-0">
                       <li>
                         <strong>Interactive Maps:</strong> Multiple basemap
                         layers with Leaflet.js.
@@ -585,26 +592,24 @@ Portfolio Section
                     class="btn btn-primary btn-sm mt-2"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#details2"
+                    data-bs-target="#details-2"
                     aria-expanded="false"
-                    aria-controls="details2"
+                    aria-controls="details-2"
                   >
                     View Details
                   </button>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Row 2 -->
-          <div class="row">
             <!-- Project 3 -->
-            <div class="col-md-6 mb-4">
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
               <div class="card shadow rounded p-3 h-100">
                 <div
-                  id="projectCarousel3"
+                  id="projectCarousel3a"
                   class="carousel slide mb-3"
                   data-bs-ride="carousel"
+                  aria-label="Secure SQL Query Interface Screenshots"
                 >
                   <div class="carousel-inner text-center">
                     <div class="carousel-item active">
@@ -624,8 +629,8 @@ Portfolio Section
                     A full-stack web application that enables secure SQL query
                     generation.
                   </p>
-                  <div class="collapse" id="details3">
-                    <ul class="text-start d-inline-block">
+                  <div class="collapse" id="details-3a">
+                    <ul class="text-start d-inline-block mb-0">
                       <li>
                         <strong>Authentication System:</strong> JWT-based login
                         with token access control.
@@ -652,9 +657,9 @@ Portfolio Section
                     class="btn btn-primary btn-sm mt-2"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#details3"
+                    data-bs-target="#details-3a"
                     aria-expanded="false"
-                    aria-controls="details3"
+                    aria-controls="details-3a"
                   >
                     View Details
                   </button>
@@ -663,12 +668,13 @@ Portfolio Section
             </div>
 
             <!-- Project 4 -->
-            <div class="col-md-6 mb-4">
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
               <div class="card shadow rounded p-3 h-100">
                 <div
                   id="projectCarousel4"
                   class="carousel slide mb-3"
                   data-bs-ride="carousel"
+                  aria-label="Full-Stack Web Application & Data Visualization Screenshots"
                 >
                   <div class="carousel-inner text-center">
                     <div class="carousel-item active">
@@ -712,6 +718,7 @@ Portfolio Section
                     type="button"
                     data-bs-target="#projectCarousel4"
                     data-bs-slide="prev"
+                    aria-label="Previous"
                   >
                     <span class="carousel-control-prev-icon"></span>
                   </button>
@@ -720,6 +727,7 @@ Portfolio Section
                     type="button"
                     data-bs-target="#projectCarousel4"
                     data-bs-slide="next"
+                    aria-label="Next"
                   >
                     <span class="carousel-control-next-icon"></span>
                   </button>
@@ -732,8 +740,8 @@ Portfolio Section
                     This full-stack system integrates front-end, mapping, and
                     reporting.
                   </p>
-                  <div class="collapse" id="details4">
-                    <ul class="text-start d-inline-block">
+                  <div class="collapse" id="details-4">
+                    <ul class="text-start d-inline-block mb-0">
                       <li>
                         <strong>Front-End Development:</strong> Responsive
                         dashboards with Flask templates.
@@ -764,24 +772,24 @@ Portfolio Section
                     class="btn btn-primary btn-sm mt-2"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#details4"
+                    data-bs-target="#details-4"
                     aria-expanded="false"
-                    aria-controls="details4"
+                    aria-controls="details-4"
                   >
                     View Details
                   </button>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <!-- Project 3: FastAPI CRUD Task Manager -->
-            <div class="col-md-6 mb-4">
+
+            <!-- Project 5: FastAPI CRUD Task Manager -->
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
               <div class="card shadow rounded p-3 h-100">
                 <div
-                  id="projectCarousel3"
+                  id="projectCarousel5"
                   class="carousel slide mb-3"
                   data-bs-ride="carousel"
+                  aria-label="FastAPI CRUD Task Manager Screenshots"
                 >
                   <div class="carousel-inner text-center">
                     <div class="carousel-item active">
@@ -816,26 +824,20 @@ Portfolio Section
                   <button
                     class="carousel-control-prev"
                     type="button"
-                    data-bs-target="#projectCarousel3"
+                    data-bs-target="#projectCarousel5"
                     data-bs-slide="prev"
+                    aria-label="Previous"
                   >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="carousel-control-prev-icon"></span>
                   </button>
                   <button
                     class="carousel-control-next"
                     type="button"
-                    data-bs-target="#projectCarousel3"
+                    data-bs-target="#projectCarousel5"
                     data-bs-slide="next"
+                    aria-label="Next"
                   >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
+                    <span class="carousel-control-next-icon"></span>
                   </button>
                 </div>
                 <div class="text-center">
@@ -845,8 +847,8 @@ Portfolio Section
                     and HTML/CSS for managing tasks with Create, Read, Update,
                     Delete (CRUD) functionality.
                   </p>
-                  <div class="collapse" id="details3">
-                    <ul class="text-start d-inline-block">
+                  <div class="collapse" id="details-5">
+                    <ul class="text-start d-inline-block mb-0">
                       <li>
                         <strong>Backend:</strong> FastAPI for RESTful API
                         endpoints and routing.
@@ -876,22 +878,24 @@ Portfolio Section
                     class="btn btn-primary btn-sm mt-2"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#details3"
+                    data-bs-target="#details-5"
                     aria-expanded="false"
-                    aria-controls="details3"
+                    aria-controls="details-5"
                   >
                     View Details
                   </button>
                 </div>
               </div>
             </div>
-            <!-- Project 2: Pizza Ordering System -->
-            <div class="col-md-6 mb-4">
+
+            <!-- Project 6: Pizza Ordering System -->
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
               <div class="card shadow rounded p-3 h-100">
                 <div
-                  id="projectCarousel2"
+                  id="projectCarousel6"
                   class="carousel slide mb-3"
                   data-bs-ride="carousel"
+                  aria-label="Pizza Ordering & Admin Management System Screenshots"
                 >
                   <div class="carousel-inner text-center">
                     <div class="carousel-item active">
@@ -924,7 +928,7 @@ Portfolio Section
                     </div>
                     <div class="carousel-item">
                       <img
-                        src="images/pizza shop 5.png"
+                        src="images/pizza shop5.png"
                         class="d-block w-100 rounded shadow"
                         alt="Order Details"
                       />
@@ -933,16 +937,18 @@ Portfolio Section
                   <button
                     class="carousel-control-prev"
                     type="button"
-                    data-bs-target="#projectCarousel2"
+                    data-bs-target="#projectCarousel6"
                     data-bs-slide="prev"
+                    aria-label="Previous"
                   >
                     <span class="carousel-control-prev-icon"></span>
                   </button>
                   <button
                     class="carousel-control-next"
                     type="button"
-                    data-bs-target="#projectCarousel2"
+                    data-bs-target="#projectCarousel6"
                     data-bs-slide="next"
+                    aria-label="Next"
                   >
                     <span class="carousel-control-next-icon"></span>
                   </button>
@@ -953,8 +959,8 @@ Portfolio Section
                     A modern FastAPI-based ordering system with cart, orders,
                     and admin panel for managing pizzas and customers.
                   </p>
-                  <div class="collapse" id="details2">
-                    <ul class="text-start d-inline-block">
+                  <div class="collapse" id="details-6">
+                    <ul class="text-start d-inline-block mb-0">
                       <li>
                         <strong>Frontend:</strong> User-friendly menu and cart
                         with Jinja2 templates.
@@ -981,9 +987,9 @@ Portfolio Section
                     class="btn btn-primary btn-sm mt-2"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#details2"
+                    data-bs-target="#details-6"
                     aria-expanded="false"
-                    aria-controls="details2"
+                    aria-controls="details-6"
                   >
                     View Details
                   </button>
@@ -991,6 +997,7 @@ Portfolio Section
               </div>
             </div>
           </div>
+          <!-- /row -->
         </div>
       </div>
     </section>
@@ -1001,7 +1008,7 @@ Technical Skills Progress
     <section class="py-5 lightBg">
       <div class="container">
         <h3 class="mb-4">Technical Skills</h3>
-        <div class="row g-4">
+        <div class="row g-4 skills-grid">
           <div class="col-md-6">
             <label>Python</label>
             <div class="progress">
