@@ -75,10 +75,18 @@ header {
 }
 
 .bannerUserImg img {
-  width        : 220px;
-  border-radius: 50%;
-  border       : 6px solid #fff;
-  margin-bottom: 20px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center 10%;
+  border-radius: 100%;
+  border: 4px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.bannerUserImg img:hover {
+  transform: scale(1.05);
 }
 
 .bannerContent h1 {
