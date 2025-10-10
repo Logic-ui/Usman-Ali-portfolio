@@ -1,105 +1,114 @@
-// script.js
+// ===== Shortcuts =====
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
-// Smooth scrolling for nav links
-document.querySelectorAll('a.nav-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    if (this.hash !== '') {
-      e.preventDefault();
-      const target = document.querySelector(this.hash);
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+// ===== Smooth scrolling for nav links =====
+$$(".navbar .nav-link").forEach((link) => {
+  if (!link.hash) return;
+  link.addEventListener("click", (e) => {
+    const target = $(link.hash);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
-// Sticky Navbar on Scroll
-window.addEventListener('scroll', function () {
-  const header = document.querySelector('header');
-  if (window.scrollY > 50) {
-    header.classList.add('sticky');
-  } else {
-    header.classList.remove('sticky');
-  }
+// ===== Sticky Navbar on scroll =====
+const header = $("header");
+const onScroll = () => header?.classList.toggle("sticky", window.scrollY > 50);
+window.addEventListener("scroll", onScroll);
+onScroll();
+
+// ===== Bootstrap helpers =====
+// Close mobile navbar after clicking a link
+document.addEventListener("click", (e) => {
+  if (!e.target.matches(".navbar .nav-link")) return;
+  const nav = $(".navbar-collapse");
+  if (nav?.classList.contains("show")) new bootstrap.Collapse(nav).hide();
 });
+// Initialize carousels
+$$(".carousel").forEach(
+  (c) =>
+    new bootstrap.Carousel(c, {
+      interval: 3500,
+      ride: false,
+      pause: "hover",
+      touch: true,
+      wrap: true,
+    })
+);
 
-// Highlight Active Section in Navbar
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
+// ===== Active nav link on scroll =====
+const sections = $$("section[id]");
+const navLinks = $$(".navbar .nav-link");
+const idToLink = new Map(
+  navLinks
+    .filter((a) => a.hash?.startsWith("#"))
+    .map((a) => [a.hash.slice(1), a])
+);
+const spy = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const link = idToLink.get(entry.target.id);
+      if (!link) return;
+      navLinks.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  },
+  { rootMargin: "-60% 0px -30% 0px", threshold: 0.01 }
+);
+sections.forEach((s) => spy.observe(s));
 
-window.addEventListener("scroll", () => {
-  let scrollY = window.pageYOffset;
-
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 100;
-    const sectionId = current.getAttribute("id");
-
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${sectionId}`) {
-          link.classList.add("active");
-        }
-      });
-    }
+// ===== Contact form validation =====
+const form = $("#contactForm") || $("form");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = $("#name")?.value.trim() || "";
+    const email = $("#email")?.value.trim() || "";
+    const message = $("#message")?.value.trim() || "";
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!name || !email || !message)
+      return alert("Please fill in all fields before submitting.");
+    if (!validEmail) return alert("Please enter a valid email address.");
+    alert("✅ Your message has been submitted successfully!");
+    form.reset();
   });
-});
-
-// Contact Form Validation
-const form = document.querySelector("form");
-form.addEventListener("submit", function (e) {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (name === "" || email === "" || message === "") {
-    e.preventDefault();
-    alert("Please fill in all fields before submitting.");
-  } else if (!/\S+@\S+\.\S+/.test(email)) {
-    e.preventDefault();
-    alert("Please enter a valid email address.");
-  }
-});
-
-// Back-to-Top Button
-const backToTop = document.createElement("button");
-backToTop.innerText = "↑";
-backToTop.classList.add("back-to-top");
-document.body.appendChild(backToTop);
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    backToTop.style.display = "block";
-  } else {
-    backToTop.style.display = "none";
-  }
-});
-
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// =======================
-// Dark Mode Toggle
-// =======================
-const darkModeToggle = document.createElement("button");
-darkModeToggle.innerText = "🌙 Dark Mode";
-darkModeToggle.classList.add("dark-mode-toggle");
-document.body.appendChild(darkModeToggle);
-
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark-theme");
-  darkModeToggle.innerText = "☀️ Light Mode";
 }
 
-darkModeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-theme");
+// ===== Back-to-Top Button =====
+const toTop = document.createElement("button");
+toTop.textContent = "↑";
+toTop.className = "back-to-top";
+document.body.appendChild(toTop);
+const toggleTop = () =>
+  (toTop.style.display = window.scrollY > 300 ? "block" : "none");
+window.addEventListener("scroll", toggleTop);
+toggleTop();
+toTop.addEventListener("click", () =>
+  window.scrollTo({ top: 0, behavior: "smooth" })
+);
 
-  if (document.body.classList.contains("dark-theme")) {
-    localStorage.setItem("theme", "dark");
-    darkModeToggle.innerText = "☀️ Light Mode";
-  } else {
-    localStorage.setItem("theme", "light");
-    darkModeToggle.innerText = "🌙 Dark Mode";
-  }
+// ===== Dark Mode Toggle (with localStorage) =====
+const THEME_KEY = "theme";
+const toggle = document.createElement("button");
+toggle.className = "dark-mode-toggle";
+document.body.appendChild(toggle);
+
+function applyTheme(t) {
+  document.body.classList.toggle("dark-theme", t === "dark");
+  toggle.textContent = t === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+  localStorage.setItem(THEME_KEY, t);
+}
+applyTheme(localStorage.getItem(THEME_KEY) || "light");
+toggle.addEventListener("click", () => {
+  applyTheme(document.body.classList.contains("dark-theme") ? "light" : "dark");
 });
+
+// ===== Skills scroller (duplicate once for seamless loop) =====
+const wrap = $(".scroll-wrapper");
+if (wrap) {
+  const clones = wrap.cloneNode(true).children;
+  Array.from(clones).forEach((node) => wrap.appendChild(node.cloneNode(true)));
+}
