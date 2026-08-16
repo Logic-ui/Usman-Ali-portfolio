@@ -32,6 +32,48 @@ const initThemeToggle = () => {
 
 initThemeToggle();
 
+// ===== Accordion: Auto-close previous details box =====
+const initDetailsAccordion = () => {
+  const detailsButtons = $$('[data-bs-toggle="collapse"][data-bs-target^="#details-"]');
+  const openCollapsibles = new Set();
+  
+  detailsButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      const targetId = button.getAttribute('data-bs-target');
+      if (!targetId) return;
+      
+      // Close all other open details boxes
+      openCollapsibles.forEach((id) => {
+        if (id !== targetId) {
+          const element = $(id);
+          if (element && element.classList.contains('show')) {
+            const collapse = new bootstrap.Collapse(element, { toggle: false });
+            collapse.hide();
+            openCollapsibles.delete(id);
+          }
+        }
+      });
+      
+      // Track the current open box
+      setTimeout(() => {
+        const element = $(targetId);
+        if (element && element.classList.contains('show')) {
+          openCollapsibles.add(targetId);
+        } else {
+          openCollapsibles.delete(targetId);
+        }
+      }, 300);
+    });
+  });
+};
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initDetailsAccordion);
+} else {
+  initDetailsAccordion();
+}
+
 // ===== Smooth scrolling for nav links =====
 $$(".navbar .nav-link").forEach((link) => {
   if (!link.hash) return;
@@ -109,6 +151,24 @@ const toggleTop = () => (toTop.style.display = window.scrollY > 300 ? "flex" : "
 window.addEventListener("scroll", toggleTop);
 toggleTop();
 toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+// ===== Scroll Animations =====
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate-on-scroll");
+    }
+  });
+}, observerOptions);
+
+$$(".timelineCard, .skillsGrid > *, .portfolio-card").forEach(el => {
+  observer.observe(el);
+});
 
 // ===== Skills scroller (duplicate once for seamless loop) =====
 const wrap = $(".scroll-wrapper");
