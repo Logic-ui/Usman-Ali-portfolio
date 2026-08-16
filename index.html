@@ -3,57 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Usman Ali Portfolio</title>
+    <title>Usman Ali — Software Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Custom CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- ================================
-Header / Navbar
+    Header / Title Block Nav
 ================================= -->
     <header>
-      <div class="headerCol">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand logoText" href="#">Usman Ali</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#Skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#contact">Contact</a>
-                </li>
-              </ul>
-            </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid titleBlock">
+          <a class="navbar-brand" href="#home">
+            <span class="logoText">USMAN ALI</span>
+            <span class="logoSub">SOFTWARE ENGINEER — FULL STACK / PYTHON</span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#home"><span class="navIdx"></span>Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about"><span class="navIdx"></span>About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#experience"><span class="navIdx"></span>Experience</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Skills"><span class="navIdx"></span>Skills</a></li>
+              <li class="nav-item"><a class="nav-link" href="#portfolio"><span class="navIdx"></span>Work</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact"><span class="navIdx"></span>Contact</a></li>
+            </ul>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -62,50 +63,45 @@ Home Section
 ================================= -->
     <section id="home">
       <div class="bannerSection">
-        <div class="container">
-          <div class="row g-4 g-md-3 align-items-center">
-            <div class="col-md-auto order-md-last">
-              <div class="bannerUserImg">
+        <div class="blueprintGrid" aria-hidden="true"></div>
+        <div class="container position-relative">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-7">
+              <h1>Hi, I'm <span class="hlAmber">Usman Ali</span></h1>
+              <h2 class="bannerSubTitle">
+                Software Engineer / Python Developer / Full-Stack Web Developer
+              </h2>
+              <p class="bannerLead">
+                I design and ship dynamic, scalable, high-performing web
+                applications — robust backends in
+                <strong>Flask, FastAPI and Django</strong>, and clean
+                front-ends with <strong>HTML, CSS, React.js and
+                JavaScript</strong>. From API design and database schemas to
+                cloud deployment, I build systems that hold up in production.
+              </p>
+
+              <div class="specLine">
+                <span>PYTHON</span><span>FLASK</span><span>DJANGO</span>
+                <span>FASTAPI</span><span>REACT.JS</span><span>POSTGRESQL</span>
+              </div>
+
+              <div class="bannerBtnCol mt-4">
+                <a download href="Usman Ali CV.pdf" class="btn btnBlueprint me-2">
+                  <i class="bi bi-download"></i> Download Resume
+                </a>
+                <a href="#contact" class="btn btnOutlineBlueprint">Get in touch</a>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="framePanel mx-auto">
+                <span class="cornerMark tl"></span><span class="cornerMark tr"></span>
+                <span class="cornerMark bl"></span><span class="cornerMark br"></span>
                 <img
                   src="images/usman.jpg"
                   alt="Profile picture of Usman Ali"
-                  class="rounded-circle img-fluid shadow"
+                  class="framePanelImg"
                 />
-              </div>
-            </div>
-            <div class="col-md">
-              <div class="bannerContent">
-                <h1>Hi, I'm Usman Ali</h1>
-                <h2 class="bannerSubTitle">
-                  Software Engineer | Python Developer | Full Stack Web
-                  Developer | Tech Enthusiast
-                </h2>
-                <p>
-                  Welcome to my personal space on the web. I'm a passionate
-                  Software Engineer and Python Web Developer with hands-on
-                  experience in building dynamic, scalable, and high-performing
-                  web applications. I specialize in developing robust backends
-                  using frameworks like Flask, FastAPI and Django, and crafting
-                  seamless front-end experiences with HTML, CSS, React.js and
-                  JavaScript. From designing RESTful APIs and integrating
-                  databases to deploying applications on the cloud, I take pride
-                  in delivering clean, efficient, and maintainable code. I’m
-                  constantly exploring new technologies — from automation and
-                  data visualization to full-stack development — to stay ahead
-                  in the ever-evolving tech landscape. Explore my portfolio to
-                  see my projects, skills, and ongoing journey in software
-                  development.
-                </p>
-
-                <div class="bannerBtnCol mt-3">
-                  <a
-                    download
-                    href="Usman Ali CV.pdf"
-                    class="btn btn-primary me-2"
-                    >Download Resume</a
-                  >
-                  <a href="#contact" class="btn btn-outline-primary">Contact</a>
-                </div>
               </div>
             </div>
           </div>
@@ -117,44 +113,35 @@ Home Section
     About Section
 ================================= -->
     <section id="about">
-      <div class="innerPageBannerCol py-5">
+      <div class="sectionSpace">
         <div class="container">
-          <div class="row g-4 align-items-center">
-            <div class="col-md-6">
-              <img
-                src="images/usman.jpg"
-                style="
-                  width: 300px;
-                  height: 350px;
-                  object-fit: cover;
-                  border-radius: 50%;
-                "
-              />
+          <div class="row g-5 align-items-center">
+            <div class="col-md-5">
+              <div class="framePanel small">
+                <span class="cornerMark tl"></span><span class="cornerMark tr"></span>
+                <span class="cornerMark bl"></span><span class="cornerMark br"></span>
+                <img src="images/usman.jpg" alt="Usman Ali" class="framePanelImg" />
+              </div>
             </div>
-            <div class="col-md-6">
-              <h1 class="xlTitle pb-3">About Me</h1>
-              <p class="lead">
-                Software Engineer | Full-Stack Developer | Problem Solver
-              </p>
-              <h3>Hello, I'm Usman Ali</h3>
+            <div class="col-md-7">
+              <h2 class="panelTitle">About Me</h2>
+              <p class="lead-note">Software Engineer · Full-Stack Developer · Problem Solver</p>
+              <h3 class="miniHeading">Hello, I'm Usman Ali</h3>
               <p>
-                I’m a passionate Software Engineer with hands-on experience in
-                building scalable web applications using modern frameworks like
-                <strong>Django, Flask,Fastapi</strong>, and front-end
-                technologies like
-                <strong
-                  >Python,ML,Data Anaylsis,Power Bi,HTML, CSS,
-                  JavaScript</strong
-                >.
+                I'm a passionate Software Engineer with hands-on experience
+                building scalable web applications using modern frameworks
+                like <strong>Django, Flask, FastAPI</strong>, and front-end
+                technologies including
+                <strong>Python, ML, Data Analysis, Power BI, HTML, CSS, JavaScript</strong>.
               </p>
               <p>
                 I focus on performance, clean code, and intuitive UX. Whether
-                it's a real-time dashboard, REST API, or custom admin panel, I
-                ensure efficient development and deployment.
+                it's a real-time dashboard, a REST API, or a custom admin
+                panel, I ensure efficient development and deployment.
               </p>
-              <a href="Usman Ali CV.pdf" class="btn btn-primary mt-3" download
-                >Download CV</a
-              >
+              <a href="Usman Ali CV.pdf" class="btn btnBlueprint mt-3" download>
+                <i class="bi bi-download"></i> Download CV
+              </a>
             </div>
           </div>
         </div>
@@ -164,283 +151,178 @@ Home Section
     <!-- ================================
 Work Experience
 ================================= -->
-    <section>
-      <div class="sectionSpaceSm lightBg">
+    <section id="experience">
+      <div class="sectionSpace lightBg">
         <div class="container">
-          <div class="row pb-3">
-            <div class="col">
-              <h4 class="smText regular">Work Experience</h4>
+          <h2 class="panelTitle pb-4">Experience</h2>
+
+          <div class="timeline">
+            <div class="timelineItem">
+              <div class="timelineDot"></div>
+              <div class="timelineCard">
+                <div class="timelineHead">
+                  <h4>Motive</h4>
+                  <span class="dateTag">Nov 2025 – Present</span>
+                </div>
+                <p class="roleTag">Data Annotator · Lahore, Pakistan</p>
+                <ul>
+                  <li>Performed high-quality annotation for video datasets</li>
+                  <li>Ensured accuracy through validation, QA checks, and structured labeling workflows</li>
+                  <li>Supported AI/ML model training pipelines with consistent and scalable data processing</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timelineItem">
+              <div class="timelineDot"></div>
+              <div class="timelineCard">
+                <div class="timelineHead">
+                  <h4>CybeCloud Pvt Ltd</h4>
+                  <span class="dateTag">Aug 2025 – Nov 2025</span>
+                </div>
+                <p class="roleTag">Software Engineer · Islamabad, Pakistan</p>
+                <ul>
+                  <li>Developed full-stack applications using FastAPI, Flask, Django, and React</li>
+                  <li>Built scalable backend systems and REST APIs with authentication and database integration</li>
+                  <li>Designed responsive UI components using HTML, CSS, and JavaScript</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timelineItem">
+              <div class="timelineDot"></div>
+              <div class="timelineCard">
+                <div class="timelineHead">
+                  <h4><a href="https://logicchasers.com/" target="_blank">LOGICCHASERS Pvt Ltd, Pakistan</a></h4>
+                  <span class="dateTag">Aug 2024 – Aug 2025</span>
+                </div>
+                <p class="roleTag">Software Engineer · Islamabad, Pakistan</p>
+                <p>
+                  A startup where I contributed across various technologies. I
+                  led backend development in <strong>Python Flask</strong>,
+                  building new features and resolving issues.
+                </p>
+                <p>
+                  I also worked with <strong>FastAPI</strong> to implement
+                  secure <strong>API key generation</strong> and integrate
+                  <strong>JWT authentication</strong> for endpoint protection.
+                </p>
+                <p>
+                  Additionally, I engaged in
+                  <strong>data analysis and visualization</strong> using
+                  <strong>NumPy, Pandas, Matplotlib, Seaborn</strong> and
+                  <strong>Plotly</strong>. I contributed to
+                  <strong>Power BI dashboards</strong>, machine learning
+                  experiments, and automated data extraction pipelines.
+                </p>
+
+                <div class="subPanel">
+                  <p class="subPanelTag">// Full-Stack Web Application &amp; Data Visualization</p>
+                  <p><b>Front-End Development:</b> Designed responsive web interfaces with consistent typography and branding using clean UI/UX principles and custom fonts. Built dynamic dashboards and filterable forms using HTML, CSS, Jinja2, and Flask templates.</p>
+                  <p><b>Interactive Mapping:</b> Developed real-time, interactive maps using GeoJSON with multiple base layers, custom marker logic, tooltips, and export functionality to enhance geospatial insights.</p>
+                  <p><b>Data Visualization:</b> Built intuitive stacked bar charts for comparative analysis of consumption and waste data using dynamic color assignment, real-time filtering, and session-based updates.</p>
+                  <p><b>PPT Report Automation:</b> Automated PowerPoint generation with python-pptx, embedding charts, metadata, and uploaded images into exportable reports.</p>
+                  <p><b>Form &amp; Metadata Management:</b> Built secure file upload and asset management systems with validation, structured saving, and cleanup mechanisms.</p>
+                  <p><b>Database &amp; Models:</b> Structured SQLAlchemy models for project metadata and implemented modular color assignment logic for materials. Processed and normalized data with Pandas for clean, aggregated reporting.</p>
+                </div>
+
+                <div class="subPanel">
+                  <p class="subPanelTag">// FastAPI Authentication &amp; Secure API Development</p>
+                  <p>Developed a secure React login form that authenticates users using a FastAPI backend with JWT. Handled token storage, client-side access control, and protected route redirection. Styled clean UI using Tailwind CSS and implemented proper error handling for user feedback.</p>
+                </div>
+
+                <div class="subPanel">
+                  <p class="subPanelTag">// PHP-based CRUD Application</p>
+                  <p>Built a CRUD system with an HTML &amp; CSS frontend that stores user information (name, city, phone, salary) in a MySQL database. Features include Create, Read, Update, Delete operations and a dynamic income tax calculator based on fiscal year tax slabs, displaying monthly tax for each user.</p>
+                </div>
+
+                <div class="subPanel">
+                  <p class="subPanelTag">// RESTful API Development</p>
+                  <p>Designed and implemented RESTful APIs (GET &amp; POST) using Django, FastAPI, and Flask to handle data exchange between frontend and backend systems.</p>
+                </div>
+
+                <div class="subPanel">
+                  <p class="subPanelTag">// Machine Learning &amp; NLP Project</p>
+                  <p><b>Sentiment Analysis for Disease Outbreak Prediction:</b> Implemented a machine learning and NLP model to analyze sentiment data for predicting potential disease outbreaks.</p>
+                </div>
+              </div>
             </div>
           </div>
-
-          <!-- Work Experience Slide: Motive -->
-          <h4 class="mdTitle cs1Title">Motive</h4>
-          <ul class="cardOptionCol">
-            <li>Nov 2025 – Present</li>
-            <li>Data Annotator</li>
-          </ul>
-          <p class="text-muted">Lahore, Pakistan</p>
-          <ul>
-            <li>Performed high-quality annotation for video datasets</li>
-            <li>
-              Ensured accuracy through validation, QA checks, and structured
-              labeling workflows
-            </li>
-            <li>
-              Supported AI/ML model training pipelines with consistent and
-              scalable data processing
-            </li>
-          </ul>
-
-          <h4 class="mdTitle cs1Title">CybeCloud Pvt Ltd</h4>
-          <ul class="cardOptionCol">
-            <li>Aug 2025 – Nov 2025</li>
-            <li>Software Engineer</li>
-          </ul>
-          <p class="text-muted">Islamabad, Pakistan</p>
-          <ul>
-            <li>
-              Developed full-stack applications using FastAPI, Flask, Django,
-              and React
-            </li>
-            <li>
-              Built scalable backend systems and REST APIs with authentication
-              and database integration
-            </li>
-            <li>
-              Designed responsive UI components using HTML, CSS, and
-              JavaScript
-            </li>
-          </ul>
-
-          <!-- Work Experience Slide: LOGICCHASERS -->
-          <h4 class="mdTitle cs1Title">
-            <a href="https://logicchasers.com/"
-              >LOGICCHASERS Pvt Ltd, Pakistan</a
-            >
-          </h4>
-          <ul class="cardOptionCol">
-            <li>Aug 2024 - Aug 2025</li>
-            <li>Software Engineer</li>
-          </ul>
-          <p>
-            A startup where I contributed across various technologies. I led
-            backend development in <strong>Python Flask</strong>, building new
-            features and resolving issues.<br /><br />
-            I also worked with <strong>FastAPI</strong> to implement secure
-            <strong>API key generation</strong> and integrate
-            <strong>JWT authentication</strong> for endpoint protection.<br /><br />
-            Additionally, I engaged in
-            <strong>data analysis and visualization</strong> using
-            <strong>NumPy, Pandas, Matplotlib, Seaborn,</strong> and
-            <strong>Plotly</strong>. I contributed to
-            <strong>Power BI dashboards</strong>, machine learning experiments,
-            and automated data extraction pipelines.
-          </p>
-          <h4><b>Full-Stack Web Application & Data Visualization</b></h4>
-
-          <p>
-            <b>Front-End Development:</b> Designed responsive web interfaces
-            with consistent typography and branding using clean
-            <b>UI/UX principles</b> and custom fonts. Built dynamic dashboards
-            and filterable forms using <b>HTML, CSS, Jinja2</b>, and
-            <b>Flask</b> templates.
-          </p>
-
-          <p>
-            <b>Interactive Mapping:</b> Developed real-time, interactive maps
-            using <b>GeoJSON</b> with multiple base layers, custom marker logic,
-            tooltips, and export functionality to enhance geospatial insights.
-          </p>
-
-          <p>
-            <b>Data Visualization:</b> Built intuitive
-            <b>stacked bar charts</b> for comparative analysis of
-            <b>consumption</b> and <b>waste data</b> using dynamic color
-            assignment, real-time filtering, and session-based updates.
-          </p>
-
-          <p>
-            <b>PPT Report Automation:</b> Automated <b>PowerPoint</b> generation
-            with <b>python-pptx</b>, embedding charts, metadata, and uploaded
-            images into exportable reports.
-          </p>
-
-          <p>
-            <b>Form & Metadata Management:</b> Built secure
-            <b>file upload</b> and <b>asset management</b> systems with
-            validation, structured saving, and cleanup mechanisms.
-          </p>
-
-          <p>
-            <b>Database & Models:</b> Structured <b>SQLAlchemy</b> models for
-            project metadata and implemented modular color assignment logic for
-            materials. Processed and normalized data with <b>Pandas</b> for
-            clean, aggregated reporting.
-          </p>
-
-          <h4><b>FastAPI Authentication & Secure API Development</b></h4>
-
-          <p>
-            Developed a secure <b>React login form</b> that authenticates users
-            using a <b>FastAPI backend with JWT</b>. Handled token storage,
-            client-side access control, and protected route redirection. Styled
-            clean UI using <b>Tailwind CSS</b> and implemented proper error
-            handling for user feedback.
-          </p>
-
-          <h4><b>PHP-based CRUD Application</b></h4>
-
-          <p>
-            Built a <b>CRUD system</b> with an <b>HTML & CSS frontend</b> that
-            stores user information (<b>name, city, phone, salary</b>) in a
-            <b>MySQL database</b>. Features include
-            <b>Create, Read, Update, Delete</b> operations and a dynamic
-            <b>income tax calculator</b> based on fiscal year tax slabs,
-            displaying monthly tax for each user.
-          </p>
-
-          <h4><b>RESTful API Development</b></h4>
-
-          <p>
-            Designed and implemented <b>RESTful APIs (GET & POST)</b> using
-            <b>Django, FastAPI, and Flask</b> to handle data exchange between
-            frontend and backend systems.
-          </p>
-
-          <h4><b>Machine Learning & NLP Project</b></h4>
-
-          <p>
-            <b>Sentiment Analysis for Disease Outbreak Prediction:</b>
-            Implemented a <b>machine learning</b> and <b>NLP model</b> to
-            analyze sentiment data for predicting potential
-            <b>disease outbreaks</b>.
-          </p>
         </div>
       </div>
-
-      <!-- Swiper Navigation -->
     </section>
+
     <!-- ================================
 Skills Section
 ================================= -->
     <section id="Skills">
       <div class="sectionSpace">
         <div class="container">
-          <!-- Section Title -->
-          <div class="row pb-3">
-            <div class="col text-center">
-              <h1 class="smText regular">Skills</h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-auto">
-              <div class="keySkillCol">
-                <h4 class="smTitle pb-3"><strong>Key Skills</strong></h4>
-                <ul>
-                  <li>
-                    <strong>Programming Languages:</strong> Python, JavaScript
-                  </li>
-                  <li>
-                    <strong>Web Development:</strong> HTML5, CSS3, React.js,
-                    Flask, Django, FastAPI
-                  </li>
-                  <li><strong>Databases:</strong> PostgreSQL, MySQL, SQLite</li>
-                  <li>
-                    <strong>DevOps Tools:</strong> Git, Docker, GitHub
-                    Actions,Bitbucket, CI/CD
-                  </li>
-                  <li><strong>Cloud Platforms:</strong> Vercel,Netlify</li>
-                  <li><strong>Testing:</strong> PyTest, Postman</li>
-                  <li><strong>APIs:</strong> RESTful APIs</li>
-                  <li>
-                    <strong>Others:</strong> Responsive Design, MVC
-                    Architecture, Web Performance Optimization
-                  </li>
+          <h2 class="panelTitle pb-4">Skills</h2>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="specSheet">
+                <h4 class="specSheetTitle">Key Skills</h4>
+                <ul class="specList">
+                  <li><span>Programming Languages</span><b>Python, JavaScript</b></li>
+                  <li><span>Web Development</span><b>HTML5, CSS3, React.js, Flask, Django, FastAPI</b></li>
+                  <li><span>Databases</span><b>PostgreSQL, MySQL, SQLite</b></li>
+                  <li><span>DevOps Tools</span><b>Git, Docker, GitHub Actions, Bitbucket, CI/CD</b></li>
+                  <li><span>Cloud Platforms</span><b>Vercel, Netlify</b></li>
+                  <li><span>Testing</span><b>PyTest, Postman</b></li>
+                  <li><span>APIs</span><b>RESTful APIs</b></li>
+                  <li><span>Others</span><b>Responsive Design, MVC Architecture, Web Performance Optimization</b></li>
                 </ul>
               </div>
             </div>
-            <div class="col-md">
-              <h4 class="smTitle pb-3"><strong>Coding Skills</strong></h4>
-              <ul>
-                <li>
-                  <strong>Languages:</strong> Python, JavaScript, TypeScript,SQL
-                </li>
-                <li>
-                  <strong>Frontend:</strong> React.js, HTML5, CSS3, Tailwind,
-                </li>
-                <li>
-                  <strong>Backend:</strong> Flask,Django, FastAPI, Node.js
-                </li>
-                <li><strong>Databases:</strong> PostgreSQL, MySQL, SQLite</li>
-                <li>
-                  <strong>Version Control:</strong> Git, GitHub, GitLab,
-                  Docker,Bitbucket
-                </li>
-                <li>
-                  <strong>Problem Solving:</strong> Data Structures, Algorithms,
-                  LeetCode, HackerRank
-                </li>
-              </ul>
-            </div>
-            <!-- 🔽 Separate Div for Scrolling Skills Logos -->
-            <div class="skills-showcase mt-4">
-              <h4 class="smTitle pb-3 text-center">
-                <strong>Technologies & Tools</strong>
-              </h4>
-              <div class="skills-scroll">
-                <div class="scroll-wrapper">
-                  <div class="skill-item">
-                    <img src="images/python.png" alt="Python" />
-                    <span>Python</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/javascript.png" alt="JavaScript" />
-                    <span>JavaScript</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/react.png" alt="React.js" />
-                    <span>React.js</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/flask.png" alt="Flask" />
-                    <span>Flask</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/django.png" alt="Django" />
-                    <span>Django</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/fastapi.png" alt="FastAPI" />
-                    <span>FastAPI</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/postgresql.png" alt="PostgreSQL" />
-                    <span>PostgreSQL</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/mysql.png" alt="MySQL" />
-                    <span>MySQL</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/docker.png" alt="Docker" />
-                    <span>Docker</span>
-                  </div>
-
-                  <div class="skill-item">
-                    <img src="images/git.png" alt="Git" />
-                    <span>Git</span>
-                  </div>
-                </div>
+            <div class="col-md-6">
+              <div class="specSheet">
+                <h4 class="specSheetTitle">Coding Skills</h4>
+                <ul class="specList">
+                  <li><span>Languages</span><b>Python, JavaScript, TypeScript, SQL</b></li>
+                  <li><span>Frontend</span><b>React.js, HTML5, CSS3, Tailwind</b></li>
+                  <li><span>Backend</span><b>Flask, Django, FastAPI, Node.js</b></li>
+                  <li><span>Databases</span><b>PostgreSQL, MySQL, SQLite</b></li>
+                  <li><span>Version Control</span><b>Git, GitHub, GitLab, Docker, Bitbucket</b></li>
+                  <li><span>Problem Solving</span><b>Data Structures, Algorithms, LeetCode, HackerRank</b></li>
+                </ul>
               </div>
+            </div>
+          </div>
+
+          <div class="skills-showcase mt-5">
+            <h4 class="specSheetTitle text-center mb-3">Technologies &amp; Tools</h4>
+            <div class="skills-scroll">
+              <div class="scroll-wrapper">
+                <div class="skill-item"><img src="images/python.png" alt="Python" /><span>Python</span></div>
+                <div class="skill-item"><img src="images/javascript.png" alt="JavaScript" /><span>JavaScript</span></div>
+                <div class="skill-item"><img src="images/react.png" alt="React.js" /><span>React.js</span></div>
+                <div class="skill-item"><img src="images/flask.png" alt="Flask" /><span>Flask</span></div>
+                <div class="skill-item"><img src="images/django.png" alt="Django" /><span>Django</span></div>
+                <div class="skill-item"><img src="images/fastapi.png" alt="FastAPI" /><span>FastAPI</span></div>
+                <div class="skill-item"><img src="images/postgresql.png" alt="PostgreSQL" /><span>PostgreSQL</span></div>
+                <div class="skill-item"><img src="images/mysql.png" alt="MySQL" /><span>MySQL</span></div>
+                <div class="skill-item"><img src="images/docker.png" alt="Docker" /><span>Docker</span></div>
+                <div class="skill-item"><img src="images/git.png" alt="Git" /><span>Git</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gaugeBlock mt-5">
+            <h4 class="specSheetTitle mb-4">Proficiency Readout</h4>
+            <div class="row g-4">
+              <div class="col-md-6 gaugeItem"><label>Python <b>90%</b></label><div class="gauge"><div class="gaugeFill" style="width:90%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>JavaScript <b>75%</b></label><div class="gauge"><div class="gaugeFill" style="width:75%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>HTML / CSS <b>95%</b></label><div class="gauge"><div class="gaugeFill" style="width:95%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>SQL / Databases <b>85%</b></label><div class="gauge"><div class="gaugeFill" style="width:85%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>Flask / FastAPI <b>70%</b></label><div class="gauge"><div class="gaugeFill" style="width:70%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>Data Visualization <b>90%</b></label><div class="gauge"><div class="gaugeFill" style="width:90%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>Django <b>70%</b></label><div class="gauge"><div class="gaugeFill" style="width:70%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>NumPy / Pandas / Matplotlib / Seaborn / Plotly <b>90%</b></label><div class="gauge"><div class="gaugeFill" style="width:90%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>Machine Learning <b>85%</b></label><div class="gauge"><div class="gaugeFill" style="width:85%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>Power BI <b>90%</b></label><div class="gauge"><div class="gaugeFill" style="width:90%"></div></div></div>
+              <div class="col-md-6 gaugeItem"><label>SQLite / PostgreSQL / MySQL <b>90%</b></label><div class="gauge"><div class="gaugeFill" style="width:90%"></div></div></div>
             </div>
           </div>
         </div>
@@ -451,939 +333,258 @@ Skills Section
 Portfolio Section
 ================================= -->
     <section id="portfolio">
-      <div class="sectionSpace">
+      <div class="sectionSpace lightBg">
         <div class="container">
-          <!-- Section Title -->
-          <div class="row pb-3">
-            <div class="col text-center">
-              <h1 class="smText regular">Portfolio</h1>
-            </div>
-          </div>
+          <h2 class="panelTitle pb-4">Portfolio</h2>
 
-          <!-- All projects in one responsive row; 4 per line on md+ -->
           <div class="row">
             <!-- Project 1 -->
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card shadow rounded p-3 h-100">
-                <div
-                  id="projectCarousel1"
-                  class="carousel slide mb-3"
-                  data-bs-ride="carousel"
-                  aria-label="Employee Information Management System Screenshots"
-                >
+              <div class="projCard h-100">
+                <span class="projNo">NO. 01</span>
+                <div id="projectCarousel1" class="carousel slide mb-3" data-bs-ride="carousel" aria-label="Employee Information Management System Screenshots">
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                      <img
-                        src="images/year1.jpg"
-                        class="d-block w-100 rounded shadow"
-                        alt="Employee Dashboard"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/year2.jpg"
-                        class="d-block w-100 rounded shadow"
-                        alt="Fiscal Year Form"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/year3.jpg"
-                        class="d-block w-100 rounded shadow"
-                        alt="Tax Slab Table"
-                      />
-                    </div>
+                    <div class="carousel-item active"><img src="images/year1.jpg" class="d-block w-100" alt="Employee Dashboard" /></div>
+                    <div class="carousel-item"><img src="images/year2.jpg" class="d-block w-100" alt="Fiscal Year Form" /></div>
+                    <div class="carousel-item"><img src="images/year3.jpg" class="d-block w-100" alt="Tax Slab Table" /></div>
                   </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#projectCarousel1"
-                    data-bs-slide="prev"
-                    aria-label="Previous"
-                  >
-                    <span class="carousel-control-prev-icon"></span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#projectCarousel1"
-                    data-bs-slide="next"
-                    aria-label="Next"
-                  >
-                    <span class="carousel-control-next-icon"></span>
-                  </button>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel1" data-bs-slide="prev" aria-label="Previous"><span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel1" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
                 </div>
-                <div class="text-center">
-                  <h5 class="pb-2">Employee Information Management System</h5>
-                  <p>
-                    This PHP + MySQL system manages employee records and tax
-                    computations.
-                  </p>
+                <div class="projBody">
+                  <h5>Employee Information Management System</h5>
+                  <p>This PHP + MySQL system manages employee records and tax computations.</p>
                   <div class="collapse" id="details-1">
-                    <ul class="text-start d-inline-block mb-0">
-                      <li>
-                        <strong>Employee Module:</strong> Add/edit/delete
-                        employee data with salary details.
-                      </li>
-                      <li>
-                        <strong>Fiscal Year Module:</strong> Manage fiscal years
-                        linked with tax slabs.
-                      </li>
-                      <li>
-                        <strong>Tax Slab Management:</strong> Define salary
-                        ranges, tax %, and base tax values.
-                      </li>
-                      <li>
-                        <strong>Dynamic Tax Calculation:</strong>
-                        Auto-calculates monthly/annual tax.
-                      </li>
+                    <ul class="projDetails">
+                      <li><strong>Employee Module:</strong> Add/edit/delete employee data with salary details.</li>
+                      <li><strong>Fiscal Year Module:</strong> Manage fiscal years linked with tax slabs.</li>
+                      <li><strong>Tax Slab Management:</strong> Define salary ranges, tax %, and base tax values.</li>
+                      <li><strong>Dynamic Tax Calculation:</strong> Auto-calculates monthly/annual tax.</li>
                     </ul>
                   </div>
-                  <button
-                    class="btn btn-primary btn-sm mt-2"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#details-1"
-                    aria-expanded="false"
-                    aria-controls="details-1"
-                  >
-                    View Details
-                  </button>
-                  <a
-                    href="https://github.com/Logic-ui/Employee-Information-Management-System"
-                    target="_blank"
-                    class="btn btn-dark btn-sm mt-2 ms-2"
-                  >
-                    <i class="bi bi-github"></i> GitHub
-                  </a>
+                  <button class="btn btnBlueprint btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#details-1" aria-expanded="false" aria-controls="details-1">View Details</button>
+                  <a href="https://github.com/Logic-ui/Employee-Information-Management-System" target="_blank" class="btn btnDark btn-sm mt-2 ms-2"><i class="bi bi-github"></i> GitHub</a>
                 </div>
               </div>
             </div>
 
             <!-- Project 2 -->
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card shadow rounded p-3 h-100">
-                <div
-                  id="projectCarousel2"
-                  class="carousel slide mb-3"
-                  data-bs-ride="carousel"
-                  aria-label="Geospatial Data Visualization Web App Screenshots"
-                >
+              <div class="projCard h-100">
+                <span class="projNo">NO. 02</span>
+                <div id="projectCarousel2" class="carousel slide mb-3" data-bs-ride="carousel" aria-label="Geospatial Data Visualization Web App Screenshots">
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                      <img
-                        src="images/flask1.jpg"
-                        class="d-block w-100 rounded shadow"
-                        alt="Map with Markers"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/flask2.jpg"
-                        class="d-block w-100 rounded shadow"
-                        alt="Leaflet Layer Controls"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/flask4.jpg"
-                        class="d-block w-100 rounded shadow"
-                        alt="GeoJSON Visualization"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/flask5.jpg"
-                        class="d-block w-100 rounded shadow"
-                        alt="Plotly Chart Integration"
-                      />
-                    </div>
+                    <div class="carousel-item active"><img src="images/flask1.jpg" class="d-block w-100" alt="Map with Markers" /></div>
+                    <div class="carousel-item"><img src="images/flask2.jpg" class="d-block w-100" alt="Leaflet Layer Controls" /></div>
+                    <div class="carousel-item"><img src="images/flask4.jpg" class="d-block w-100" alt="GeoJSON Visualization" /></div>
+                    <div class="carousel-item"><img src="images/flask5.jpg" class="d-block w-100" alt="Plotly Chart Integration" /></div>
                   </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#projectCarousel2"
-                    data-bs-slide="prev"
-                    aria-label="Previous"
-                  >
-                    <span class="carousel-control-prev-icon"></span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#projectCarousel2"
-                    data-bs-slide="next"
-                    aria-label="Next"
-                  >
-                    <span class="carousel-control-next-icon"></span>
-                  </button>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel2" data-bs-slide="prev" aria-label="Previous"><span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel2" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
                 </div>
-                <div class="text-center">
-                  <h5 class="pb-2">Geospatial Data Visualization Web App</h5>
-                  <p>
-                    Flask + SQLite app with Leaflet.js maps and interactive
-                    analytics.
-                  </p>
+                <div class="projBody">
+                  <h5>Geospatial Data Visualization Web App</h5>
+                  <p>Flask + SQLite app with Leaflet.js maps and interactive analytics.</p>
                   <div class="collapse" id="details-2">
-                    <ul class="text-start d-inline-block mb-0">
-                      <li>
-                        <strong>Interactive Maps:</strong> Multiple basemap
-                        layers with Leaflet.js.
-                      </li>
-                      <li>
-                        <strong>GeoJSON Visualization:</strong> Display points,
-                        lines, and polygons.
-                      </li>
-                      <li>
-                        <strong>Dynamic CRUD:</strong> Manage spatial records
-                        via Flask routes.
-                      </li>
-                      <li>
-                        <strong>Analytics Dashboards:</strong> Plotly
-                        bar/stacked charts in Jinja2.
-                      </li>
+                    <ul class="projDetails">
+                      <li><strong>Interactive Maps:</strong> Multiple basemap layers with Leaflet.js.</li>
+                      <li><strong>GeoJSON Visualization:</strong> Display points, lines, and polygons.</li>
+                      <li><strong>Dynamic CRUD:</strong> Manage spatial records via Flask routes.</li>
+                      <li><strong>Analytics Dashboards:</strong> Plotly bar/stacked charts in Jinja2.</li>
                     </ul>
                   </div>
-                  <button
-                    class="btn btn-primary btn-sm mt-2"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#details-2"
-                    aria-expanded="false"
-                    aria-controls="details-2"
-                  >
-                    View Details
-                  </button>
-                  <a
-                    href="https://github.com/Logic-ui/Geospatial-Data-Visualization-Web-Application"
-                    target="_blank"
-                    class="btn btn-dark btn-sm mt-2 ms-2"
-                  >
-                    <i class="bi bi-github"></i> GitHub
-                  </a>
+                  <button class="btn btnBlueprint btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#details-2" aria-expanded="false" aria-controls="details-2">View Details</button>
+                  <a href="https://github.com/Logic-ui/Geospatial-Data-Visualization-Web-Application" target="_blank" class="btn btnDark btn-sm mt-2 ms-2"><i class="bi bi-github"></i> GitHub</a>
                 </div>
               </div>
             </div>
 
             <!-- Project 3 -->
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card shadow rounded p-3 h-100">
-                <div
-                  id="projectCarousel3a"
-                  class="carousel slide mb-3"
-                  data-bs-ride="carousel"
-                  aria-label="Secure SQL Query Interface Screenshots"
-                >
+              <div class="projCard h-100">
+                <span class="projNo">NO. 03</span>
+                <div id="projectCarousel3a" class="carousel slide mb-3" data-bs-ride="carousel" aria-label="Secure SQL Query Interface Screenshots">
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                      <img
-                        src="images/fastapi.jpg"
-                        class="d-block w-100 rounded shadow"
-                        alt="FastAPI Backend"
-                      />
-                    </div>
+                    <div class="carousel-item active"><img src="images/fastapi.jpg" class="d-block w-100" alt="FastAPI Backend" /></div>
                   </div>
                 </div>
-                <div class="text-center">
-                  <h5 class="pb-2">
-                    Secure SQL Query Interface with FastAPI & React
-                  </h5>
-                  <p>
-                    A full-stack web application that enables secure SQL query
-                    generation.
-                  </p>
+                <div class="projBody">
+                  <h5>Secure SQL Query Interface with FastAPI &amp; React</h5>
+                  <p>A full-stack web application that enables secure SQL query generation.</p>
                   <div class="collapse" id="details-3a">
-                    <ul class="text-start d-inline-block mb-0">
-                      <li>
-                        <strong>Authentication System:</strong> JWT-based login
-                        with token access control.
-                      </li>
-                      <li>
-                        <strong>React Frontend:</strong> Responsive interface
-                        built with React, TypeScript, Tailwind CSS.
-                      </li>
-                      <li>
-                        <strong>FastAPI Backend:</strong> Secure token-verified
-                        APIs using OAuth2PasswordBearer.
-                      </li>
-                      <li>
-                        <strong>Cross-Origin Support:</strong> Configured CORS
-                        for seamless frontend-backend communication.
-                      </li>
-                      <li>
-                        <strong>Other Features:</strong> MySQL-ready DB
-                        integration, error handling, clean routing.
-                      </li>
+                    <ul class="projDetails">
+                      <li><strong>Authentication System:</strong> JWT-based login with token access control.</li>
+                      <li><strong>React Frontend:</strong> Responsive interface built with React, TypeScript, Tailwind CSS.</li>
+                      <li><strong>FastAPI Backend:</strong> Secure token-verified APIs using OAuth2PasswordBearer.</li>
+                      <li><strong>Cross-Origin Support:</strong> Configured CORS for seamless frontend-backend communication.</li>
+                      <li><strong>Other Features:</strong> MySQL-ready DB integration, error handling, clean routing.</li>
                     </ul>
                   </div>
-                  <button
-                    class="btn btn-primary btn-sm mt-2"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#details-3a"
-                    aria-expanded="false"
-                    aria-controls="details-3a"
-                  >
-                    View Details
-                  </button>
+                  <button class="btn btnBlueprint btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#details-3a" aria-expanded="false" aria-controls="details-3a">View Details</button>
                 </div>
               </div>
             </div>
 
             <!-- Project 4 -->
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card shadow rounded p-3 h-100">
-                <div
-                  id="projectCarousel4"
-                  class="carousel slide mb-3"
-                  data-bs-ride="carousel"
-                  aria-label="Full-Stack Web Application & Data Visualization Screenshots"
-                >
+              <div class="projCard h-100">
+                <span class="projNo">NO. 04</span>
+                <div id="projectCarousel4" class="carousel slide mb-3" data-bs-ride="carousel" aria-label="Full-Stack Web Application & Data Visualization Screenshots">
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                      <img
-                        src="images/app1.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Employee Dashboard"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/app2.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Fiscal Year Form"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/app3.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Tax Slab Table"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/app4.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Employee Tax Report"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/app5.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Employee Tax Report"
-                      />
-                    </div>
+                    <div class="carousel-item active"><img src="images/app1.png" class="d-block w-100" alt="Employee Dashboard" /></div>
+                    <div class="carousel-item"><img src="images/app2.png" class="d-block w-100" alt="Fiscal Year Form" /></div>
+                    <div class="carousel-item"><img src="images/app3.png" class="d-block w-100" alt="Tax Slab Table" /></div>
+                    <div class="carousel-item"><img src="images/app4.png" class="d-block w-100" alt="Employee Tax Report" /></div>
+                    <div class="carousel-item"><img src="images/app5.png" class="d-block w-100" alt="Employee Tax Report" /></div>
                   </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#projectCarousel4"
-                    data-bs-slide="prev"
-                    aria-label="Previous"
-                  >
-                    <span class="carousel-control-prev-icon"></span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#projectCarousel4"
-                    data-bs-slide="next"
-                    aria-label="Next"
-                  >
-                    <span class="carousel-control-next-icon"></span>
-                  </button>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel4" data-bs-slide="prev" aria-label="Previous"><span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel4" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
                 </div>
-                <div class="text-center">
-                  <h5 class="pb-2">
-                    Full-Stack Web Application & Data Visualization
-                  </h5>
-                  <p>
-                    This full-stack system integrates front-end, mapping, and
-                    reporting.
-                  </p>
+                <div class="projBody">
+                  <h5>Full-Stack Web Application &amp; Data Visualization</h5>
+                  <p>This full-stack system integrates front-end, mapping, and reporting.</p>
                   <div class="collapse" id="details-4">
-                    <ul class="text-start d-inline-block mb-0">
-                      <li>
-                        <strong>Front-End Development:</strong> Responsive
-                        dashboards with Flask templates.
-                      </li>
-                      <li>
-                        <strong>Interactive Mapping:</strong> Real-time maps
-                        with GeoJSON layers and tooltips.
-                      </li>
-                      <li>
-                        <strong>Data Visualization:</strong> Stacked bar charts
-                        with dynamic color assignment.
-                      </li>
-                      <li>
-                        <strong>PPT Report Automation:</strong> Automated
-                        PowerPoint generation with python-pptx.
-                      </li>
-                      <li>
-                        <strong>Form & Metadata Management:</strong> Secure file
-                        upload & management system.
-                      </li>
-                      <li>
-                        <strong>Database & Processing:</strong> SQLAlchemy
-                        models, Pandas aggregation, clean reporting.
-                      </li>
+                    <ul class="projDetails">
+                      <li><strong>Front-End Development:</strong> Responsive dashboards with Flask templates.</li>
+                      <li><strong>Interactive Mapping:</strong> Real-time maps with GeoJSON layers and tooltips.</li>
+                      <li><strong>Data Visualization:</strong> Stacked bar charts with dynamic color assignment.</li>
+                      <li><strong>PPT Report Automation:</strong> Automated PowerPoint generation with python-pptx.</li>
+                      <li><strong>Form &amp; Metadata Management:</strong> Secure file upload &amp; management system.</li>
+                      <li><strong>Database &amp; Processing:</strong> SQLAlchemy models, Pandas aggregation, clean reporting.</li>
                     </ul>
                   </div>
-                  <button
-                    class="btn btn-primary btn-sm mt-2"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#details-4"
-                    aria-expanded="false"
-                    aria-controls="details-4"
-                  >
-                    View Details
-                  </button>
+                  <button class="btn btnBlueprint btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#details-4" aria-expanded="false" aria-controls="details-4">View Details</button>
                 </div>
               </div>
             </div>
 
-            <!-- Project 5: FastAPI CRUD Task Manager -->
+            <!-- Project 5 -->
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card shadow rounded p-3 h-100">
-                <div
-                  id="projectCarousel5"
-                  class="carousel slide mb-3"
-                  data-bs-ride="carousel"
-                  aria-label="FastAPI CRUD Task Manager Screenshots"
-                >
+              <div class="projCard h-100">
+                <span class="projNo">NO. 05</span>
+                <div id="projectCarousel5" class="carousel slide mb-3" data-bs-ride="carousel" aria-label="FastAPI CRUD Task Manager Screenshots">
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                      <img
-                        src="images/crud1.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Task List View"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/crud2.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Create Task Form"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/crud3.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Edit Task Form"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/crud4.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Delete Task Confirmation"
-                      />
-                    </div>
+                    <div class="carousel-item active"><img src="images/crud1.png" class="d-block w-100" alt="Task List View" /></div>
+                    <div class="carousel-item"><img src="images/crud2.png" class="d-block w-100" alt="Create Task Form" /></div>
+                    <div class="carousel-item"><img src="images/crud3.png" class="d-block w-100" alt="Edit Task Form" /></div>
+                    <div class="carousel-item"><img src="images/crud4.png" class="d-block w-100" alt="Delete Task Confirmation" /></div>
                   </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#projectCarousel5"
-                    data-bs-slide="prev"
-                    aria-label="Previous"
-                  >
-                    <span class="carousel-control-prev-icon"></span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#projectCarousel5"
-                    data-bs-slide="next"
-                    aria-label="Next"
-                  >
-                    <span class="carousel-control-next-icon"></span>
-                  </button>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel5" data-bs-slide="prev" aria-label="Previous"><span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel5" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
                 </div>
-                <div class="text-center">
-                  <h5 class="pb-2">FastAPI CRUD Task Manager</h5>
-                  <p>
-                    A full-stack web application built with FastAPI, SQLAlchemy,
-                    and HTML/CSS for managing tasks with Create, Read, Update,
-                    Delete (CRUD) functionality.
-                  </p>
+                <div class="projBody">
+                  <h5>FastAPI CRUD Task Manager</h5>
+                  <p>A full-stack web application built with FastAPI, SQLAlchemy, and HTML/CSS for managing tasks with CRUD functionality.</p>
                   <div class="collapse" id="details-5">
-                    <ul class="text-start d-inline-block mb-0">
-                      <li>
-                        <strong>Backend:</strong> FastAPI for RESTful API
-                        endpoints and routing.
-                      </li>
-                      <li>
-                        <strong>Database:</strong> SQLite with SQLAlchemy ORM
-                        for persistent task storage.
-                      </li>
-                      <li>
-                        <strong>Frontend:</strong> Dynamic HTML templates
-                        rendered with Jinja2, responsive layout with CSS and
-                        Bootstrap.
-                      </li>
-                      <li>
-                        <strong>Interactive Features:</strong> JavaScript fetch
-                        API for delete confirmation popups and real-time
-                        updates.
-                      </li>
-                      <li>
-                        <strong>Additional Features:</strong> Task creation,
-                        editing, completion status tracking, and user-friendly
-                        interface with navigation and footer links.
-                      </li>
+                    <ul class="projDetails">
+                      <li><strong>Backend:</strong> FastAPI for RESTful API endpoints and routing.</li>
+                      <li><strong>Database:</strong> SQLite with SQLAlchemy ORM for persistent task storage.</li>
+                      <li><strong>Frontend:</strong> Dynamic HTML templates rendered with Jinja2, responsive layout with CSS and Bootstrap.</li>
+                      <li><strong>Interactive Features:</strong> JavaScript fetch API for delete confirmation popups and real-time updates.</li>
+                      <li><strong>Additional Features:</strong> Task creation, editing, completion status tracking, and a user-friendly interface.</li>
                     </ul>
                   </div>
-                  <button
-                    class="btn btn-primary btn-sm mt-2"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#details-5"
-                    aria-expanded="false"
-                    aria-controls="details-5"
-                  >
-                    View Details
-                  </button>
-                  <a
-                    href="https://github.com/Logic-ui/Secure-SQL-Query-Interface-with-FastAPI-React"
-                    target="_blank"
-                    class="btn btn-dark btn-sm mt-2 ms-2"
-                  >
-                    <i class="bi bi-github"></i> GitHub
-                  </a>
-
+                  <button class="btn btnBlueprint btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#details-5" aria-expanded="false" aria-controls="details-5">View Details</button>
+                  <a href="https://github.com/Logic-ui/Secure-SQL-Query-Interface-with-FastAPI-React" target="_blank" class="btn btnDark btn-sm mt-2 ms-2"><i class="bi bi-github"></i> GitHub</a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 6: Pizza Ordering System -->
+            <!-- Project 6 -->
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card shadow rounded p-3 h-100">
-                <div
-                  id="projectCarousel6"
-                  class="carousel slide mb-3"
-                  data-bs-ride="carousel"
-                  aria-label="Pizza Ordering & Admin Management System Screenshots"
-                >
+              <div class="projCard h-100">
+                <span class="projNo">NO. 06</span>
+                <div id="projectCarousel6" class="carousel slide mb-3" data-bs-ride="carousel" aria-label="Pizza Ordering & Admin Management System Screenshots">
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                      <img
-                        src="images/piza shop1.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Pizza Menu"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/pizza shop 2.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Cart View"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/pizza shop 3.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Admin Panel Pizza Management"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/pizza shop 4.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Order Details"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/pizza shop5.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Order Details"
-                      />
-                    </div>
+                    <div class="carousel-item active"><img src="images/piza shop1.png" class="d-block w-100" alt="Pizza Menu" /></div>
+                    <div class="carousel-item"><img src="images/pizza shop 2.png" class="d-block w-100" alt="Cart View" /></div>
+                    <div class="carousel-item"><img src="images/pizza shop 3.png" class="d-block w-100" alt="Admin Panel Pizza Management" /></div>
+                    <div class="carousel-item"><img src="images/pizza shop 4.png" class="d-block w-100" alt="Order Details" /></div>
+                    <div class="carousel-item"><img src="images/pizza shop5.png" class="d-block w-100" alt="Order Details" /></div>
                   </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#projectCarousel6"
-                    data-bs-slide="prev"
-                    aria-label="Previous"
-                  >
-                    <span class="carousel-control-prev-icon"></span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#projectCarousel6"
-                    data-bs-slide="next"
-                    aria-label="Next"
-                  >
-                    <span class="carousel-control-next-icon"></span>
-                  </button>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel6" data-bs-slide="prev" aria-label="Previous"><span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel6" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
                 </div>
-                <div class="text-center">
-                  <h5 class="pb-2">Pizza Ordering & Admin Management System</h5>
-                  <p>
-                    A modern FastAPI-based ordering system with cart, orders,
-                    and admin panel for managing pizzas and customers.
-                  </p>
+                <div class="projBody">
+                  <h5>Pizza Ordering &amp; Admin Management System</h5>
+                  <p>A modern FastAPI-based ordering system with cart, orders, and admin panel for managing pizzas and customers.</p>
                   <div class="collapse" id="details-6">
-                    <ul class="text-start d-inline-block mb-0">
-                      <li>
-                        <strong>Frontend:</strong> User-friendly menu and cart
-                        with Jinja2 templates.
-                      </li>
-                      <li>
-                        <strong>Backend:</strong> FastAPI with SQLAlchemy ORM
-                        and clean architecture.
-                      </li>
-                      <li>
-                        <strong>Admin Panel:</strong> Manage pizzas, prices, and
-                        images with CRUD operations.
-                      </li>
-                      <li>
-                        <strong>Orders:</strong> Customer info, order items, and
-                        total tracking.
-                      </li>
-                      <li>
-                        <strong>Extra:</strong> Image upload handling, database
-                        seeding, responsive design.
-                      </li>
+                    <ul class="projDetails">
+                      <li><strong>Frontend:</strong> User-friendly menu and cart with Jinja2 templates.</li>
+                      <li><strong>Backend:</strong> FastAPI with SQLAlchemy ORM and clean architecture.</li>
+                      <li><strong>Admin Panel:</strong> Manage pizzas, prices, and images with CRUD operations.</li>
+                      <li><strong>Orders:</strong> Customer info, order items, and total tracking.</li>
+                      <li><strong>Extra:</strong> Image upload handling, database seeding, responsive design.</li>
                     </ul>
                   </div>
-                  <button
-                    class="btn btn-primary btn-sm mt-2"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#details-6"
-                    aria-expanded="false"
-                    aria-controls="details-6"
-                  >
-                    View Details
-                  </button>
-                  <a
-                    href="https://github.com/Logic-ui/pizza-site"
-                    target="_blank"
-                    class="btn btn-dark btn-sm mt-2 ms-2"
-                  >
-                    <i class="bi bi-github"></i> GitHub
-                  </a>
+                  <button class="btn btnBlueprint btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#details-6" aria-expanded="false" aria-controls="details-6">View Details</button>
+                  <a href="https://github.com/Logic-ui/pizza-site" target="_blank" class="btn btnDark btn-sm mt-2 ms-2"><i class="bi bi-github"></i> GitHub</a>
                 </div>
               </div>
             </div>
-            <!-- Project 6: Todo App — Full-Stack Django & React -->
+
+            <!-- Project 7: Todo App -->
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card shadow rounded p-3 h-100">
-                <div
-                  id="projectCarouselTodo"
-                  class="carousel slide mb-3"
-                  data-bs-ride="carousel"
-                  aria-label="Todo App Screenshots"
-                >
+              <div class="projCard h-100">
+                <span class="projNo">NO. 07</span>
+                <div id="projectCarouselTodo" class="carousel slide mb-3" data-bs-ride="carousel" aria-label="Todo App Screenshots">
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                      <img
-                        src="images/todo8.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Todo List Page"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/todo10.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Add Task Modal"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/todo3.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Edit Task Modal"
-                      />
-                    </div>
-                    <div class="carousel-item">
-                      <img
-                        src="images/todo4.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Completed Tasks Filter"
-                      />
-                    </div>
+                    <div class="carousel-item active"><img src="images/todo8.png" class="d-block w-100" alt="Todo List Page" /></div>
+                    <div class="carousel-item"><img src="images/todo10.png" class="d-block w-100" alt="Add Task Modal" /></div>
+                    <div class="carousel-item"><img src="images/todo3.png" class="d-block w-100" alt="Edit Task Modal" /></div>
+                    <div class="carousel-item"><img src="images/todo4.png" class="d-block w-100" alt="Completed Tasks Filter" /></div>
                   </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#projectCarouselTodo"
-                    data-bs-slide="prev"
-                    aria-label="Previous"
-                  >
-                    <span class="carousel-control-prev-icon"></span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#projectCarouselTodo"
-                    data-bs-slide="next"
-                    aria-label="Next"
-                  >
-                    <span class="carousel-control-next-icon"></span>
-                  </button>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarouselTodo" data-bs-slide="prev" aria-label="Previous"><span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarouselTodo" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
                 </div>
-
-                <div class="text-center">
-                  <h5 class="pb-2">Todo App — Full-Stack Django & React</h5>
-                  <p>
-                    A modern task management app built with React and Django
-                    REST Framework, featuring task creation, editing, deletion,
-                    filtering, and completion tracking.
-                  </p>
-
+                <div class="projBody">
+                  <h5>Todo App — Full-Stack Django &amp; React</h5>
+                  <p>A modern task management app built with React and Django REST Framework, featuring task CRUD, filtering, and completion tracking.</p>
                   <div class="collapse" id="details-todo">
-                    <ul class="text-start d-inline-block mb-0">
-                      <li>
-                        <strong>Frontend:</strong> React.js with Bootstrap UI
-                        and Reactstrap modals.
-                      </li>
-                      <li>
-                        <strong>Backend:</strong> Django REST Framework with
-                        clean API architecture.
-                      </li>
-                      <li>
-                        <strong>Auth:</strong> JWT authentication using
-                        SimpleJWT.
-                      </li>
-                      <li>
-                        <strong>Database:</strong> PostgreSQL with Django ORM.
-                      </li>
-                      <li>
-                        <strong>Deployment:</strong> Fully containerized using
-                        Docker & Docker-Compose.
-                      </li>
+                    <ul class="projDetails">
+                      <li><strong>Frontend:</strong> React.js with Bootstrap UI and Reactstrap modals.</li>
+                      <li><strong>Backend:</strong> Django REST Framework with clean API architecture.</li>
+                      <li><strong>Auth:</strong> JWT authentication using SimpleJWT.</li>
+                      <li><strong>Database:</strong> PostgreSQL with Django ORM.</li>
+                      <li><strong>Deployment:</strong> Fully containerized using Docker &amp; Docker-Compose.</li>
                     </ul>
                   </div>
-
-                  <button
-                    class="btn btn-primary btn-sm mt-2"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#details-todo"
-                    aria-expanded="false"
-                    aria-controls="details-todo"
-                  >
-                    View Details
-                  </button>
-                  <a
-                    href="https://github.com/Logic-ui/django-todo-react"
-                    target="_blank"
-                    class="btn btn-dark btn-sm mt-2 ms-2"
-                  >
-                    <i class="bi bi-github"></i> GitHub
-                  </a>
+                  <button class="btn btnBlueprint btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#details-todo" aria-expanded="false" aria-controls="details-todo">View Details</button>
+                  <a href="https://github.com/Logic-ui/django-todo-react" target="_blank" class="btn btnDark btn-sm mt-2 ms-2"><i class="bi bi-github"></i> GitHub</a>
                 </div>
               </div>
             </div>
-            <!-- Project: Employee Management System — Flask & React -->
+
+            <!-- Project 8: Employee Management -->
             <div class="col-12 col-sm-6 col-md-3 mb-4">
-              <div class="card shadow rounded p-3 h-100">
-                <!-- Carousel -->
-                <div
-                  id="projectCarouselEmployee"
-                  class="carousel slide mb-3"
-                  data-bs-ride="carousel"
-                  aria-label="Employee Management Screenshots"
-                >
+              <div class="projCard h-100">
+                <span class="projNo">NO. 08</span>
+                <div id="projectCarouselEmployee" class="carousel slide mb-3" data-bs-ride="carousel" aria-label="Employee Management Screenshots">
                   <div class="carousel-inner text-center">
-                    <div class="carousel-item active">
-                      <img
-                        src="images/employe1.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Dashboard Overview"
-                      />
-                    </div>
-
-                    <div class="carousel-item">
-                      <img
-                        src="images/employe2.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Employee Table"
-                      />
-                    </div>
-
-                    <div class="carousel-item">
-                      <img
-                        src="images/employe3.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Dark Mode View"
-                      />
-                    </div>
-
-                    <div class="carousel-item">
-                      <img
-                        src="images/employe4.png"
-                        class="d-block w-100 rounded shadow"
-                        alt="Add Employee Form"
-                      />
-                    </div>
+                    <div class="carousel-item active"><img src="images/employe1.png" class="d-block w-100" alt="Dashboard Overview" /></div>
+                    <div class="carousel-item"><img src="images/employe2.png" class="d-block w-100" alt="Employee Table" /></div>
+                    <div class="carousel-item"><img src="images/employe3.png" class="d-block w-100" alt="Dark Mode View" /></div>
+                    <div class="carousel-item"><img src="images/employe4.png" class="d-block w-100" alt="Add Employee Form" /></div>
                   </div>
-
-                  <!-- Controls -->
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#projectCarouselEmployee"
-                    data-bs-slide="prev"
-                    aria-label="Previous"
-                  >
-                    <span class="carousel-control-prev-icon"></span>
-                  </button>
-
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#projectCarouselEmployee"
-                    data-bs-slide="next"
-                    aria-label="Next"
-                  >
-                    <span class="carousel-control-next-icon"></span>
-                  </button>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarouselEmployee" data-bs-slide="prev" aria-label="Previous"><span class="carousel-control-prev-icon"></span></button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarouselEmployee" data-bs-slide="next" aria-label="Next"><span class="carousel-control-next-icon"></span></button>
                 </div>
-
-                <!-- Content -->
-                <div class="text-center">
-                  <h5 class="pb-2">
-                    Employee Management System — Flask & React
-                  </h5>
-                  <p>
-                    A full-stack employee management dashboard with CRUD,
-                    analytics, charts, dark/light mode, export features, and
-                    real-time salary insights.
-                  </p>
-
-                  <!-- Hidden Details -->
+                <div class="projBody">
+                  <h5>Employee Management System — Flask &amp; React</h5>
+                  <p>A full-stack employee management dashboard with CRUD, analytics, charts, dark/light mode, and export features.</p>
                   <div class="collapse" id="details-employee">
-                    <ul class="text-start d-inline-block mb-0">
-                      <li>
-                        <strong>Frontend:</strong> React.js, Axios, Chart.js,
-                        Excel/PDF export.
-                      </li>
-                      <li>
-                        <strong>Backend:</strong> Flask REST API (Python) with
-                        SQLite DB.
-                      </li>
-                      <li>
-                        <strong>Features:</strong> CRUD, sorting, search,
-                        pagination, dashboard charts.
-                      </li>
-                      <li>
-                        <strong>Exports:</strong> XLSX & PDF auto-table
-                        formatting.
-                      </li>
-                      <li>
-                        <strong>Theme:</strong> Modern dark/light mode toggle.
-                      </li>
+                    <ul class="projDetails">
+                      <li><strong>Frontend:</strong> React.js, Axios, Chart.js, Excel/PDF export.</li>
+                      <li><strong>Backend:</strong> Flask REST API (Python) with SQLite DB.</li>
+                      <li><strong>Features:</strong> CRUD, sorting, search, pagination, dashboard charts.</li>
+                      <li><strong>Exports:</strong> XLSX &amp; PDF auto-table formatting.</li>
+                      <li><strong>Theme:</strong> Modern dark/light mode toggle.</li>
                     </ul>
                   </div>
-
-                  <button
-                    class="btn btn-primary btn-sm mt-2"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#details-employee"
-                    aria-expanded="false"
-                    aria-controls="details-employee"
-                  >
-                    View Details
-                  </button>
-                  <a
-                    href="https://github.com/Logic-ui/employee-management"
-                    target="_blank"
-                    class="btn btn-dark btn-sm mt-2 ms-2"
-                  >
-                    <i class="bi bi-github"></i> GitHub
-                  </a>
+                  <button class="btn btnBlueprint btn-sm mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#details-employee" aria-expanded="false" aria-controls="details-employee">View Details</button>
+                  <a href="https://github.com/Logic-ui/employee-management" target="_blank" class="btn btnDark btn-sm mt-2 ms-2"><i class="bi bi-github"></i> GitHub</a>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- /row -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================
-Technical Skills Progress
-================================= -->
-    <section class="py-5 lightBg">
-      <div class="container">
-        <h3 class="mb-4">Technical Skills</h3>
-        <div class="row g-4 skills-grid">
-          <div class="col-md-6">
-            <label>Python</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 90%">90%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>JavaScript</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 75%">75%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>HTML / CSS</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 95%">95%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>SQL / Databases</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 85%">85%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>Flask / FastAPI</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 70%">70%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>Data Visualization</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 90%">90%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>Django</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 70%">70%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>Numpy/pandas/Matplotlib/Seaborn/Plotly</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 90%">90%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>Machine Learning</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 85%">85%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>PowerBI</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 90%">90%</div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label>SQLlite/PostgreSQL/mySql</label>
-            <div class="progress">
-              <div class="progress-bar" style="width: 90%">90%</div>
             </div>
           </div>
         </div>
@@ -1393,94 +594,46 @@ Technical Skills Progress
     <!-- ================================
 Contact Section
 ================================= -->
-    <section id="contact" class="py-5">
-      <div class="container text-center">
-        <h2>Get in Touch</h2>
-        <p class="pb-md-3">
-          I would love to hear from you! Whether you have a question, want to
-          collaborate on a project, or just want to say hello, feel free to
-          reach out.
-        </p>
-        <p class="pb-md-3">
-          You can contact me via email or through the form below. I will do my
-          best to respond as soon as possible.
-        </p>
-        <p class="pb-md-3">
-          Thank you for visiting my website, and I look forward to connecting
-          with you!
+    <section id="contact">
+      <div class="blueprintGrid dark" aria-hidden="true"></div>
+      <div class="container text-center position-relative">
+        <h2 class="panelTitle onDark">Get in Touch</h2>
+        <p class="onDark contactLead">
+          I would love to hear from you — a question, a collaboration, or
+          just a hello. You can reach me via email or the form below, and
+          I'll get back to you as soon as I can.
         </p>
         <form id="contactForm" class="mx-auto" style="max-width: 600px">
-          <div class="mb-3">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              class="form-control"
-              required
-            />
+          <div class="mb-3 text-start">
+            <label class="formLabel">NAME</label>
+            <input type="text" id="name" name="name" placeholder="Your name" class="form-control blueprintInput" required />
           </div>
-          <div class="mb-3">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              class="form-control"
-              required
-            />
+          <div class="mb-3 text-start">
+            <label class="formLabel">EMAIL</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" class="form-control blueprintInput" required />
           </div>
-          <div class="mb-3">
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Message"
-              class="form-control"
-              required
-            ></textarea>
+          <div class="mb-3 text-start">
+            <label class="formLabel">MESSAGE</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." class="form-control blueprintInput" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btnBlueprint px-4">Submit Request</button>
         </form>
-
-        <script>
-          document
-            .getElementById("contactForm")
-            .addEventListener("submit", function (e) {
-              e.preventDefault();
-              alert("✅ Your message has been submitted successfully!");
-              this.reset(); // <-- Clears all fields
-            });
-        </script>
       </div>
     </section>
 
     <!-- ================================
 Footer
 ================================= -->
-    <footer class="py-4 text-center" style="background-color: #f4f4f9">
+    <footer>
       <div class="container">
+        <div class="footerTitleBlock">
+          <span>USMAN ALI — PORTFOLIO</span>
+          <span>REV. 2025</span>
+        </div>
         <ul class="list-inline mb-3">
-          <li class="list-inline-item">
-            <a href="https://web.facebook.com/profile.php?id=100013992877054"
-              ><img src="images/fb.svg" alt="Facebook"
-            /></a>
-          </li>
-          <li class="list-inline-item">
-            <!-- <a href="https://www.instagram.com/callmeusman12"
-              ><img src="images/insta.svg" alt="Instagram"
-            /></a> -->
-          </li>
-          <li class="list-inline-item">
-            <a href="https://github.com/Logic-ui"
-              ><img src="images/github.png" alt="GitHub"
-            /></a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.linkedin.com/in/usman-ali-b0603124a/"
-              ><img src="images/linkedin.svg" alt="LinkedIn"
-            /></a>
-          </li>
+          <li class="list-inline-item"><a href="https://web.facebook.com/profile.php?id=100013992877054" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="https://github.com/Logic-ui" aria-label="GitHub"><i class="bi bi-github"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.linkedin.com/in/usman-ali-b0603124a/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
         </ul>
         <p class="mb-0">© 2025 Usman Ali — All rights reserved</p>
       </div>

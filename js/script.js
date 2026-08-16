@@ -2,6 +2,36 @@
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
+// ===== Dark/Light Mode Toggle =====
+const initThemeToggle = () => {
+  const toggle = $("#themeToggle");
+  const html = document.documentElement;
+  const THEME_KEY = "portfolio-theme";
+  
+  const setTheme = (theme) => {
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_KEY, theme);
+  };
+  
+  const getPreferredTheme = () => {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved) return saved;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  };
+  
+  const currentTheme = getPreferredTheme();
+  setTheme(currentTheme);
+  
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const newTheme = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      setTheme(newTheme);
+    });
+  }
+};
+
+initThemeToggle();
+
 // ===== Smooth scrolling for nav links =====
 $$(".navbar .nav-link").forEach((link) => {
   if (!link.hash) return;
@@ -13,20 +43,14 @@ $$(".navbar .nav-link").forEach((link) => {
   });
 });
 
-// ===== Sticky Navbar on scroll =====
-const header = $("header");
-const onScroll = () => header?.classList.toggle("sticky", window.scrollY > 50);
-window.addEventListener("scroll", onScroll);
-onScroll();
-
-// ===== Bootstrap helpers =====
-// Close mobile navbar after clicking a link
+// ===== Close mobile navbar after clicking a link =====
 document.addEventListener("click", (e) => {
-  if (!e.target.matches(".navbar .nav-link")) return;
+  if (!e.target.closest(".navbar .nav-link")) return;
   const nav = $(".navbar-collapse");
   if (nav?.classList.contains("show")) new bootstrap.Collapse(nav).hide();
 });
-// Initialize carousels
+
+// ===== Initialize carousels =====
 $$(".carousel").forEach(
   (c) =>
     new bootstrap.Carousel(c, {
@@ -42,9 +66,7 @@ $$(".carousel").forEach(
 const sections = $$("section[id]");
 const navLinks = $$(".navbar .nav-link");
 const idToLink = new Map(
-  navLinks
-    .filter((a) => a.hash?.startsWith("#"))
-    .map((a) => [a.hash.slice(1), a])
+  navLinks.filter((a) => a.hash?.startsWith("#")).map((a) => [a.hash.slice(1), a])
 );
 const spy = new IntersectionObserver(
   (entries) => {
@@ -81,34 +103,16 @@ if (form) {
 const toTop = document.createElement("button");
 toTop.textContent = "↑";
 toTop.className = "back-to-top";
+toTop.setAttribute("aria-label", "Back to top");
 document.body.appendChild(toTop);
-const toggleTop = () =>
-  (toTop.style.display = window.scrollY > 300 ? "block" : "none");
+const toggleTop = () => (toTop.style.display = window.scrollY > 300 ? "flex" : "none");
 window.addEventListener("scroll", toggleTop);
 toggleTop();
-toTop.addEventListener("click", () =>
-  window.scrollTo({ top: 0, behavior: "smooth" })
-);
-
-// ===== Dark Mode Toggle (with localStorage) =====
-const THEME_KEY = "theme";
-const toggle = document.createElement("button");
-toggle.className = "dark-mode-toggle";
-document.body.appendChild(toggle);
-
-function applyTheme(t) {
-  document.body.classList.toggle("dark-theme", t === "dark");
-  toggle.textContent = t === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
-  localStorage.setItem(THEME_KEY, t);
-}
-applyTheme(localStorage.getItem(THEME_KEY) || "light");
-toggle.addEventListener("click", () => {
-  applyTheme(document.body.classList.contains("dark-theme") ? "light" : "dark");
-});
+toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
 // ===== Skills scroller (duplicate once for seamless loop) =====
 const wrap = $(".scroll-wrapper");
 if (wrap) {
-  const clones = wrap.cloneNode(true).children;
-  Array.from(clones).forEach((node) => wrap.appendChild(node.cloneNode(true)));
+  const clones = Array.from(wrap.children);
+  clones.forEach((node) => wrap.appendChild(node.cloneNode(true)));
 }
