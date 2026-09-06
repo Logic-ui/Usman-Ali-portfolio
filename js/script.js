@@ -255,6 +255,21 @@ document.addEventListener('DOMContentLoaded', () => {
         'Theme System: Seamless toggle between dark and light themes with state persistence.'
       ],
       techStack: ['Flask', 'Python', 'React.js', 'Chart.js', 'SQLite', 'XLSX/PDF Export', 'Axios']
+    },
+    '9': {
+      title: 'RetailPulse — Cloud POS & Sales Intelligence',
+      category: 'FastAPI & React POS Suite',
+      github: 'https://github.com/Logic-ui/Sales-dashboard',
+      images: ['images/sales-dashboard-preview.png', 'images/sales2.jpg'],
+      overview: 'Full-stack retail management suite featuring rapid barcode POS checkout, atomic inventory tracking, customer loyalty tiers, and real-time profit analytics dashboards.',
+      highlights: [
+        'Cloud POS Terminal: Rapid barcode scanner and product lookup, quantity adjustments, and automated tax calculations.',
+        'Sales Intelligence Dashboard: Real-time revenue, gross/net profit margins, average order value (AOV), and interactive trend curves powered by Plotly.js.',
+        'Inventory Health & Stock Alerts: Live stock categorization (Healthy, Low Stock, Stockout) with low-stock warnings and SKU monitoring.',
+        'Customer Loyalty & Discounts: Integrated loyalty tier discounts, order breakdown, cash/card checkout workflows, and tender confirmation.',
+        'Modern Backend Architecture: High-performance FastAPI REST API endpoints backed by SQLAlchemy ORM and secure JWT authentication.'
+      ],
+      techStack: ['FastAPI', 'Python', 'React.js', 'SQLAlchemy', 'Plotly.js', 'JWT Auth', 'PostgreSQL / SQLite', 'Tailwind CSS']
     }
   };
 
