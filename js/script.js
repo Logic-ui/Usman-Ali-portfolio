@@ -190,7 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Full-Stack Reporting & Geospatial Dashboard',
       category: 'Flask & Report Automation',
       github: 'https://github.com/Logic-ui',
-      images: ['images/app1.png', 'images/app2.png', 'images/app3.png', 'images/app4.png', 'images/app5.png', 'images/app6.png'],
+      images: [
+        'images/geo-report1.jpg',
+        'images/geo-report2.jpg',
+        'images/geo-report3.jpg',
+        'images/geo-report4.jpg'
+      ],
       overview: 'Enterprise-grade full-stack data platform providing dynamic analytical dashboards, interactive maps, and automated PowerPoint presentation generation.',
       highlights: [
         'Automated PPT Generation: Integrates python-pptx to generate formatted executive PowerPoint presentations with dynamic charts and uploaded images.',
