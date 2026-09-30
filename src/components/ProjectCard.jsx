@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Github, ExternalLink, ChevronLeft, ChevronRight, Eye } from 'lucide-react';
+import { ArrowRight, Github, ExternalLink, ChevronLeft, ChevronRight, Eye, Sparkles, CheckCircle2 } from 'lucide-react';
 import { soundFx } from '../utils/soundEffects';
 import TiltCard from './TiltCard';
 
@@ -7,11 +7,10 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Auto slide when hovered or smoothly on idle
+  // Auto slide when hovered
   useEffect(() => {
     if (!project.images || project.images.length <= 1) return;
 
-    // Advance slides every 4.5 seconds if hovered
     let timer;
     if (isHovered) {
       timer = setInterval(() => {
@@ -45,7 +44,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
     if (t.includes('django') || t.includes('tax') || t.includes('sqlite')) return 'tag-emerald';
     if (t.includes('python') || t.includes('php')) return 'tag-amber';
     if (t.includes('postgres') || t.includes('jwt')) return 'tag-indigo';
-    if (t.includes('docker') || t.includes('report')) return 'tag-blue';
+    if (t.includes('docker') || t.includes('report') || t.includes('pptx')) return 'tag-blue';
     return '';
   };
 
@@ -58,7 +57,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Media Carousel */}
+        {/* Media Carousel Header */}
         <div className="project-media-wrapper">
           <div className="project-top-badges">
             <span className="project-serial-badge font-mono">
@@ -77,7 +76,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
               />
             )}
 
-            {/* Quick Zoom / Case Study Overlay on hover */}
+            {/* Quick Inspect Case Study Overlay on hover */}
             <div
               className="project-img-overlay"
               onClick={() => {
@@ -90,6 +89,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
               </span>
             </div>
 
+            {/* Carousel navigation controls if multiple images */}
             {project.images && project.images.length > 1 && (
               <>
                 <button
@@ -131,10 +131,10 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
           </div>
         </div>
 
-        {/* Content */}
+        {/* Card Body Content */}
         <div className="project-content">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
-            <h3 className="project-title" style={{ marginBottom: 0 }}>
+          <div className="project-header-row">
+            <h3 className="project-title">
               {project.title}
             </h3>
             {project.isActive && (
@@ -146,7 +146,17 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
 
           <p className="project-desc">{project.summary}</p>
 
-          {/* Tech tags */}
+          {/* Quick Technical Highlights Pill */}
+          {project.highlights && project.highlights.length > 0 && (
+            <div className="project-quick-highlight">
+              <CheckCircle2 size={13} className="text-cyan-400 shrink-0" />
+              <span className="highlight-text">
+                {project.highlights[0].split(':')[1] || project.highlights[0]}
+              </span>
+            </div>
+          )}
+
+          {/* Tech Stack Pills */}
           <div className="project-tech-stack">
             {project.techStack.map((tech, idx) => (
               <span key={idx} className={`tech-tag-sm ${getTagColorClass(tech)}`}>
@@ -155,7 +165,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
             ))}
           </div>
 
-          {/* Actions */}
+          {/* Bottom Actions Hub */}
           <div className="project-actions">
             <button
               type="button"
@@ -168,14 +178,14 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
               Case Study <ArrowRight size={14} className="arrow-icon-shift" />
             </button>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div className="project-action-links">
               {project.github && (
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-link-action"
-                  title="View Source Code"
+                  title="View GitHub Repository"
                   onClick={() => soundFx.playPop()}
                   onMouseEnter={() => soundFx.playHover()}
                 >
@@ -188,7 +198,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-link-action demo"
-                  title="Live Preview / Demo"
+                  title="Launch Live Application"
                   onClick={() => soundFx.playPop()}
                   onMouseEnter={() => soundFx.playHover()}
                 >
