@@ -4,7 +4,7 @@ export const personalInfo = {
   roleTitle: "Software Engineer",
   subtitle: "Full-Stack & Python Specialist",
   status: "Available for New Opportunities",
-  avatar: "/images/usman.jpg",
+  avatar: "/images/Usman.jpg",
   cvFile: "/Usman Ali CV.pdf",
   email: "usmanali07137@gmail.com",
   phone: "+92 309 8430449",
