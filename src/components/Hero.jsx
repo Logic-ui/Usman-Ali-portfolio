@@ -31,7 +31,7 @@ export default function Hero() {
       if (charIndex === 0) {
         setIsDeleting(false);
         setRoleIndex((prev) => (prev + 1) % personalInfo.roles.length);
-        timer = setTimeout(() => {}, 350);
+        timer = setTimeout(() => { }, 350);
       } else {
         timer = setTimeout(() => setCharIndex((prev) => prev - 1), 40);
       }
