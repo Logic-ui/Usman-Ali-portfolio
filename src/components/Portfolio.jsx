@@ -8,6 +8,7 @@ import {
   Code2,
   Globe,
   LayoutGrid,
+  List,
   Table as TableIcon,
   ExternalLink,
   Github,
@@ -27,7 +28,7 @@ export default function Portfolio() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTech, setSelectedTech] = useState(null);
   const [activeModalProject, setActiveModalProject] = useState(null);
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'matrix'
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'list' | 'matrix'
 
   // Flagship project (RetailPulse, id: "9")
   const flagshipProject = useMemo(() => {
@@ -116,7 +117,7 @@ export default function Portfolio() {
               ))}
             </div>
 
-            {/* View Mode Toggle: Grid vs Matrix */}
+            {/* View Mode Toggle: Grid vs Split List vs Matrix */}
             <div className="portfolio-view-toggle">
               <button
                 type="button"
@@ -125,10 +126,22 @@ export default function Portfolio() {
                   soundFx.playPop();
                   setViewMode('grid');
                 }}
-                title="3D Card Showcase Grid"
+                title="Compact 3D Card Showcase Grid"
               >
                 <LayoutGrid size={15} />
                 <span>Showcase Grid</span>
+              </button>
+              <button
+                type="button"
+                className={`view-mode-btn ${viewMode === 'list' ? 'active' : ''}`}
+                onClick={() => {
+                  soundFx.playPop();
+                  setViewMode('list');
+                }}
+                title="Horizontal Compact Split Cards"
+              >
+                <List size={15} />
+                <span>Split List</span>
               </button>
               <button
                 type="button"
@@ -215,7 +228,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Dynamic Display: Grid or Matrix Table */}
+        {/* Dynamic Display: Grid or Horizontal List or Matrix Table */}
         {filteredProjects.length > 0 ? (
           viewMode === 'grid' ? (
             <div className="projects-grid">
@@ -224,6 +237,19 @@ export default function Portfolio() {
                   key={project.id}
                   project={project}
                   index={idx}
+                  layout="grid"
+                  onOpenCaseStudy={(proj) => setActiveModalProject(proj)}
+                />
+              ))}
+            </div>
+          ) : viewMode === 'list' ? (
+            <div className="projects-list-layout">
+              {filteredProjects.map((project, idx) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={idx}
+                  layout="list"
                   onOpenCaseStudy={(proj) => setActiveModalProject(proj)}
                 />
               ))}

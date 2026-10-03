@@ -12,12 +12,15 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import { useScrollReveal } from './utils/useScrollReveal';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('usman-portfolio-theme');
     return saved ? saved : 'dark';
   });
+
+  useScrollReveal();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

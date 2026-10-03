@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Github, ExternalLink, ChevronLeft, ChevronRight, Eye, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Github, ExternalLink, ChevronLeft, ChevronRight, Eye, CheckCircle2 } from 'lucide-react';
 import { soundFx } from '../utils/soundEffects';
 import TiltCard from './TiltCard';
 
-export default function ProjectCard({ project, index, onOpenCaseStudy }) {
+export default function ProjectCard({ project, index, layout = 'grid', onOpenCaseStudy }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -15,7 +15,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
     if (isHovered) {
       timer = setInterval(() => {
         setActiveSlide((prev) => (prev + 1) % project.images.length);
-      }, 3500);
+      }, 3200);
     }
 
     return () => clearInterval(timer);
@@ -49,16 +49,21 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
   };
 
   const projectSerial = String(index + 1).padStart(2, '0');
+  const isList = layout === 'list';
+
+  // Limit tags shown in compact grid to prevent excessive card height
+  const visibleTags = isList ? project.techStack : project.techStack.slice(0, 4);
+  const remainingTagsCount = project.techStack.length - visibleTags.length;
 
   return (
-    <TiltCard maxTilt={5} scale={1.02} className="project-card-tilt-wrap">
+    <TiltCard maxTilt={isList ? 3 : 5} scale={1.015} className={`project-card-tilt-wrap ${isList ? 'is-list-wrap' : ''}`}>
       <div
-        className="project-card border-beam-card"
+        className={`project-card border-beam-card ${isList ? 'project-card-list' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Media Carousel Header */}
-        <div className="project-media-wrapper">
+        <div className={`project-media-wrapper ${isList ? 'list-media' : ''}`}>
           <div className="project-top-badges">
             <span className="project-serial-badge font-mono">
               PROJ // {projectSerial}
@@ -76,6 +81,9 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
               />
             )}
 
+            {/* Subtle Gradient Vignette */}
+            <div className="project-img-vignette" />
+
             {/* Quick Inspect Case Study Overlay on hover */}
             <div
               className="project-img-overlay"
@@ -83,9 +91,10 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
                 soundFx.playPop();
                 onOpenCaseStudy(project);
               }}
+              title="Click to inspect architecture and case study"
             >
               <span className="overlay-inspect-pill">
-                <Eye size={14} /> Quick Inspect Case Study
+                <Eye size={13} /> Quick Inspect
               </span>
             </div>
 
@@ -98,7 +107,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
                   onClick={prevSlide}
                   aria-label="Previous slide"
                 >
-                  <ChevronLeft size={16} />
+                  <ChevronLeft size={15} />
                 </button>
                 <button
                   type="button"
@@ -106,11 +115,11 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
                   onClick={nextSlide}
                   aria-label="Next slide"
                 >
-                  <ChevronRight size={16} />
+                  <ChevronRight size={15} />
                 </button>
 
                 <div className="carousel-slide-indicator font-mono">
-                  {activeSlide + 1} / {project.images.length}
+                  {activeSlide + 1}/{project.images.length}
                 </div>
 
                 <div className="carousel-dots">
@@ -123,6 +132,7 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
                         soundFx.playPop();
                         setActiveSlide(idx);
                       }}
+                      title={`Jump to slide ${idx + 1}`}
                     />
                   ))}
                 </div>
@@ -132,21 +142,23 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
         </div>
 
         {/* Card Body Content */}
-        <div className="project-content">
+        <div className={`project-content ${isList ? 'list-content' : ''}`}>
           <div className="project-header-row">
-            <h3 className="project-title">
+            <h3 className="project-title" onClick={() => onOpenCaseStudy(project)}>
               {project.title}
             </h3>
             {project.isActive && (
-              <span className="badge-live-pulse">
+              <span className="badge-live-pulse shrink-0">
                 <span className="pulse-indicator" /> Live
               </span>
             )}
           </div>
 
-          <p className="project-desc">{project.summary}</p>
+          <p className={`project-desc ${isList ? 'list-desc' : 'clamp-2'}`}>
+            {project.summary}
+          </p>
 
-          {/* Quick Technical Highlights Pill */}
+          {/* Quick Technical Highlight Chip */}
           {project.highlights && project.highlights.length > 0 && (
             <div className="project-quick-highlight">
               <CheckCircle2 size={13} className="text-cyan-400 shrink-0" />
@@ -158,11 +170,16 @@ export default function ProjectCard({ project, index, onOpenCaseStudy }) {
 
           {/* Tech Stack Pills */}
           <div className="project-tech-stack">
-            {project.techStack.map((tech, idx) => (
+            {visibleTags.map((tech, idx) => (
               <span key={idx} className={`tech-tag-sm ${getTagColorClass(tech)}`}>
                 {tech}
               </span>
             ))}
+            {remainingTagsCount > 0 && (
+              <span className="tech-tag-sm tag-more font-mono" title={project.techStack.slice(4).join(', ')}>
+                +{remainingTagsCount}
+              </span>
+            )}
           </div>
 
           {/* Bottom Actions Hub */}

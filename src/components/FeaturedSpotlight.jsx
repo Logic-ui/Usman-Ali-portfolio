@@ -11,11 +11,10 @@ import {
   Layers,
   CheckCircle2,
   Terminal,
-  RotateCcw,
-  ShoppingBag,
   CreditCard,
   Check
 } from 'lucide-react';
+import confetti from 'canvas-confetti';
 import { soundFx } from '../utils/soundEffects';
 import TiltCard from './TiltCard';
 import MagneticButton from './MagneticButton';
@@ -68,12 +67,21 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
     soundFx.playPop();
     setCheckoutStatus('processing');
     setTimeout(() => {
-      soundFx.playSuccess();
+      soundFx.playChime();
       setCheckoutStatus('success');
+
+      // Trigger celebratory mini confetti
+      confetti({
+        particleCount: 50,
+        spread: 60,
+        origin: { y: 0.6 },
+        colors: ['#06b6d4', '#10b981', '#6366f1']
+      });
+
       setTimeout(() => {
         setCheckoutStatus(null);
-      }, 3500);
-    }, 700);
+      }, 4000);
+    }, 600);
   };
 
   return (
@@ -82,7 +90,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
       <div className="spotlight-badge-strip">
         <div className="spotlight-badges-left">
           <span className="spotlight-flagship-tag">
-            <Sparkles size={14} className="text-amber-400" /> FLAGSHIP PRODUCTION ARCHITECTURE
+            <Sparkles size={14} className="text-amber-400" /> FLAGSHIP ARCHITECTURE
           </span>
           <span className="badge-live-pulse">
             <span className="pulse-indicator" /> Live POS Deployment
@@ -124,30 +132,44 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
         </div>
       </div>
 
-      <TiltCard maxTilt={3} scale={1.01} className="spotlight-card-tilt">
+      <TiltCard maxTilt={2.5} scale={1.01} className="spotlight-card-tilt">
         <div className="spotlight-card border-beam-card">
           <div className="spotlight-grid">
             {/* Left Column: Dynamic Interactive Display */}
             <div className="spotlight-media-pane">
               {activeTab === 'visual' && (
                 <div className="spotlight-visual-mode">
-                  <div className="spotlight-main-img-box">
-                    <img
-                      src={project.images[activeImgIndex]}
-                      alt={`${project.title} screenshot`}
-                      className="spotlight-main-img"
-                    />
-                    <div className="spotlight-img-controls">
-                      <span className="spotlight-img-counter font-mono">
-                        {activeImgIndex + 1} / {project.images.length}
-                      </span>
-                      <span className="spotlight-zoom-pill font-mono">
-                        <Sparkles size={12} /> RetailPulse v2.4
-                      </span>
+                  {/* Browser Mockup Window */}
+                  <div className="spotlight-browser-frame">
+                    <div className="spotlight-browser-topbar">
+                      <div className="browser-dots">
+                        <span className="dot red" />
+                        <span className="dot yellow" />
+                        <span className="dot green" />
+                      </div>
+                      <div className="browser-url-pill font-mono">
+                        <span>https://retailpulse.io/pos-terminal</span>
+                      </div>
+                      <div className="browser-right-badge font-mono">
+                        v2.4 Live
+                      </div>
+                    </div>
+
+                    <div className="spotlight-main-img-box">
+                      <img
+                        src={project.images[activeImgIndex]}
+                        alt={`${project.title} screenshot`}
+                        className="spotlight-main-img"
+                      />
+                      <div className="spotlight-img-controls">
+                        <span className="spotlight-img-counter font-mono">
+                          {activeImgIndex + 1} / {project.images.length}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Thumbnail Strip */}
+                  {/* Compact Thumbnail Strip */}
                   <div className="spotlight-thumbnails-row">
                     {project.images.slice(0, 6).map((img, idx) => (
                       <button
@@ -261,7 +283,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
                     <div className="sim-checkout-box">
                       {checkoutStatus === 'success' ? (
                         <div className="sim-success-alert font-mono">
-                          <CheckCircle2 size={18} className="text-emerald-400" />
+                          <CheckCircle2 size={16} className="text-emerald-400" />
                           <span>ORDER #8849 TENDERED — 14ms DB COMMIT (ACID OK)</span>
                         </div>
                       ) : (
@@ -285,7 +307,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
               {activeTab === 'blueprint' && (
                 <div className="spotlight-blueprint-mode">
                   <div className="blueprint-header font-mono">
-                    <Cpu size={16} className="text-cyan-400" /> SYSTEM ARCHITECTURE &amp; TELEMETRY
+                    <Cpu size={15} className="text-cyan-400" /> SYSTEM ARCHITECTURE &amp; TELEMETRY
                   </div>
 
                   {/* Flow pipeline */}
@@ -356,7 +378,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
               <div className="spotlight-feature-bullets">
                 <div className="feature-bullet-item">
                   <div className="bullet-icon-box">
-                    <Zap size={16} className="text-cyan-400" />
+                    <Zap size={15} className="text-cyan-400" />
                   </div>
                   <div>
                     <strong>High-Speed POS Checkout:</strong>
@@ -366,7 +388,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
 
                 <div className="feature-bullet-item">
                   <div className="bullet-icon-box">
-                    <BarChart3 size={16} className="text-amber-400" />
+                    <BarChart3 size={15} className="text-amber-400" />
                   </div>
                   <div>
                     <strong>Interactive Sales Intelligence:</strong>
@@ -376,7 +398,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
 
                 <div className="feature-bullet-item">
                   <div className="bullet-icon-box">
-                    <ShieldCheck size={16} className="text-emerald-400" />
+                    <ShieldCheck size={15} className="text-emerald-400" />
                   </div>
                   <div>
                     <strong>Enterprise Security &amp; RBAC:</strong>
@@ -410,7 +432,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
                       onClick={() => soundFx.playPop()}
                       onMouseEnter={() => soundFx.playHover()}
                     >
-                      <ExternalLink size={16} /> Launch Live POS Demo
+                      <ExternalLink size={15} /> Launch Live POS Demo
                     </a>
                   </MagneticButton>
                 )}
@@ -425,7 +447,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
                       onClick={() => soundFx.playPop()}
                       onMouseEnter={() => soundFx.playHover()}
                     >
-                      <Github size={16} /> GitHub Source
+                      <Github size={15} /> GitHub Source
                     </a>
                   </MagneticButton>
                 )}
@@ -438,7 +460,7 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
                     onOpenCaseStudy(project);
                   }}
                 >
-                  Full Case Study <ArrowRight size={15} />
+                  Full Case Study <ArrowRight size={14} />
                 </button>
               </div>
             </div>
