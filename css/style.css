@@ -2250,3 +2250,81 @@ pre,
     left: -24px;
   }
 }
+
+@media (max-width: 576px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .profile-card-wrapper {
+    max-width: 280px;
+  }
+
+  .floating-pill {
+    transform: scale(0.8);
+  }
+
+  .pill-python { left: -10px; }
+  .pill-react { right: -10px; }
+  .pill-fastapi { left: -10px; }
+  .pill-docker { right: -10px; }
+
+  .project-carousel {
+    height: 165px;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .project-action-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .contact-channel-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.95rem;
+  }
+
+  .floating-pill {
+    display: none;
+  }
+}
+
+@supports (padding: max(0px)) {
+  .site-header {
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+  .site-footer {
+    padding-bottom: max(2rem, calc(1.5rem + env(safe-area-inset-bottom)));
+  }
+  .back-to-top-btn {
+    bottom: max(1.25rem, calc(1rem + env(safe-area-inset-bottom)));
+    right: max(1.25rem, calc(1rem + env(safe-area-inset-right)));
+  }
+}

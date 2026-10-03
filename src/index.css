@@ -3910,13 +3910,33 @@ img {
 }
 
 /* ==========================================================================
-   Responsive Media Queries
+   Comprehensive Responsive System: Tablets, iPhones & Cell Phones
    ========================================================================== */
+
+/* Helper utilities for responsive display */
+.d-none {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .d-md-inline-flex {
+    display: inline-flex !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. Laptop & Landscape Tablet (max-width: 1024px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding: 0 1.5rem;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 3.5rem;
+    gap: 3rem;
   }
 
   .hero-bio {
@@ -3936,12 +3956,10 @@ img {
   }
 
   .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .contact-grid,
   .spotlight-grid {
     grid-template-columns: 1fr;
+    gap: 2.25rem;
   }
 
   .hero-stats-strip {
@@ -3959,7 +3977,11 @@ img {
   }
 }
 
-@media (max-width: 768px) {
+/* --------------------------------------------------------------------------
+   2. Tablet Portrait (max-width: 992px) — iPad, iPad Air, Android Tablets
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  /* Switch navbar to mobile drawer on tablets to avoid link cramping */
   .nav-links-wrapper {
     position: fixed;
     top: var(--nav-height);
@@ -3968,14 +3990,15 @@ img {
     background: var(--bg-elevated);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg), 0 0 35px rgba(0, 0, 0, 0.5);
     flex-direction: column;
-    padding: 1.5rem;
-    gap: 0.75rem;
+    padding: 1.25rem;
+    gap: 0.65rem;
     transform: translateY(-20px);
     opacity: 0;
     pointer-events: none;
     transition: var(--transition);
+    z-index: 999;
   }
 
   .nav-links-wrapper.open {
@@ -3987,26 +4010,181 @@ img {
   .nav-link {
     width: 100%;
     text-align: center;
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
   }
 
   .mobile-nav-toggle {
     display: flex;
   }
 
-  .pillars-grid,
-  .gauges-grid,
-  .form-row {
-    grid-template-columns: 1fr;
+  .section-wrapper {
+    padding: 5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .profile-card-wrapper {
+    max-width: 330px;
+  }
+
+  .floating-pill {
+    transform: scale(0.85);
+  }
+
+  .pill-python {
+    left: -15px;
+  }
+
+  .pill-react {
+    right: -15px;
+  }
+
+  .pill-fastapi {
+    left: -15px;
+  }
+
+  .pill-docker {
+    right: -15px;
   }
 
   .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skills-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gauges-grid {
     grid-template-columns: 1fr;
+  }
+
+  .portfolio-controls-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .portfolio-view-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Small Tablets & Phablets (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* iOS Safari Zoom Prevention: ensures inputs don't trigger auto-zoom */
+  input,
+  textarea,
+  select,
+  .search-input,
+  .form-input,
+  .form-textarea {
+    font-size: 16px !important;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .section-wrapper {
+    padding: 4.25rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.85rem, 6vw, 2.35rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 1.5rem);
+    padding-bottom: 4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.35rem, 8vw, 3.25rem);
+  }
+
+  .hero-roles {
+    font-size: 1.15rem;
+    min-height: 1.8rem;
+  }
+
+  .hero-bio {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .hero-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .stat-item {
+    padding: 1.25rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .pillars-grid,
+  .skills-categories-grid,
+  .gauges-grid,
+  .form-row,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media-wrapper {
+    height: 170px;
+  }
+
+  .experience-timeline {
+    padding-left: 1.85rem;
+  }
+
+  .timeline-light-stream {
+    left: 8px;
+  }
+
+  .exp-dot-pulse {
+    left: -1.85rem;
+    width: 20px;
+    height: 20px;
+  }
+
+  .exp-card {
+    padding: 1.35rem;
   }
 
   .spotlight-grid {
     padding: 1.25rem;
     gap: 1.5rem;
+  }
+
+  .spotlight-main-img-box {
+    height: 240px;
+  }
+
+  .spotlight-thumbnails-row {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
   }
 
   .spotlight-badge-strip {
@@ -4021,12 +4199,12 @@ img {
   }
 
   .sim-products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .blueprint-pipeline {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.65rem;
   }
 
   .pipeline-connector .connector-arrow {
@@ -4037,14 +4215,23 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .portfolio-controls-top {
-    flex-direction: column;
-    align-items: stretch;
+  .contact-grid {
+    gap: 1.75rem;
   }
 
-  .portfolio-view-toggle {
-    width: 100%;
-    justify-content: center;
+  .contact-info-card,
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+
+  /* Modal responsive on tablet/mobile */
+  .modal-dialog-custom {
+    padding: 1.75rem 1.25rem;
+    max-width: 95vw;
+  }
+
+  .modal-gallery-wrap {
+    height: 240px;
   }
 
   .terminal-tabs {
@@ -4052,16 +4239,567 @@ img {
   }
 }
 
-@media (max-width: 480px) {
-  .hero-stats-strip {
+/* --------------------------------------------------------------------------
+   4. Cell Phones & iPhones (max-width: 576px) — iPhone 12/13/14/15/16, Galaxy, Pixel
+   -------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Header mobile optimization */
+  .site-header {
+    height: calc(var(--nav-height) - 6px);
+  }
+
+  .site-navbar {
+    height: calc(var(--nav-height) - 6px);
+  }
+
+  .brand-title {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .brand-badge-animated {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .nav-actions {
+    gap: 0.45rem;
+  }
+
+  .sound-switch-btn,
+  .theme-switch-btn,
+  .mobile-nav-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Hero Section for mobile */
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 1rem);
+    padding-bottom: 3.25rem;
+  }
+
+  .status-pill-animated {
+    font-size: 0.74rem;
+    padding: 0.35rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-greeting {
+    font-size: 0.88rem;
+  }
+
+  .hero-title {
+    font-size: 2.45rem;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-roles {
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-bio {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-chip-interactive {
+    font-size: 0.74rem;
+    padding: 0.32rem 0.65rem;
+  }
+
+  /* Touch-friendly full width CTA buttons */
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-ctas .magnetic-wrapper {
+    width: 100%;
+  }
+
+  .hero-ctas .btn-modern {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .profile-card-wrapper {
+    max-width: 270px;
+  }
+
+  /* Keep floating badges tucked and scaled so they never cause horizontal scroll */
+  .floating-pill {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.65rem;
+    transform: scale(0.85);
+  }
+
+  .floating-pill img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .pill-python {
+    left: -12px;
+    top: 8%;
+  }
+
+  .pill-react {
+    right: -12px;
+    top: 8%;
+  }
+
+  .pill-fastapi {
+    left: -12px;
+    bottom: 15%;
+  }
+
+  .pill-docker {
+    right: -12px;
+    bottom: 15%;
+  }
+
+  /* Dev Terminal Mobile */
+  .dev-terminal-card {
+    border-radius: var(--radius-md);
+  }
+
+  .terminal-header {
+    padding: 0.65rem 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .terminal-tab-btn {
+    padding: 0.28rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .terminal-btn-icon {
+    font-size: 0.7rem;
+    padding: 0.28rem 0.55rem;
+  }
+
+  .terminal-body {
+    padding: 1rem;
+  }
+
+  .terminal-code {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  /* About section mobile */
+  .about-card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .about-title {
+    font-size: 1.2rem;
+  }
+
+  .education-box {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .edu-icon-wrap {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Experience Section mobile */
+  .experience-timeline {
+    padding-left: 1.45rem;
+  }
+
+  .timeline-light-stream {
+    left: 6px;
+  }
+
+  .exp-dot-pulse {
+    left: -1.45rem;
+    width: 16px;
+    height: 16px;
+  }
+
+  .exp-dot-core {
+    width: 6px;
+    height: 6px;
+  }
+
+  .exp-card {
+    padding: 1.15rem 1rem;
+  }
+
+  .exp-company {
+    font-size: 1.12rem;
+  }
+
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .exp-role-strip {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .exp-bullets li {
+    font-size: 0.85rem;
+  }
+
+  /* Skills Section mobile */
+  .skills-filter-nav {
+    gap: 0.4rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+  }
+
+  .skills-filter-tab {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .skill-category-card {
+    padding: 1.35rem 1rem;
+  }
+
+  .gauges-card {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Portfolio Section on iPhone / Cell Phone */
+  .portfolio-control-panel {
+    padding: 1.15rem 0.95rem;
+    gap: 1rem;
+  }
+
+  .portfolio-filters {
+    gap: 0.4rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    padding-bottom: 0.35rem;
+    width: 100%;
+  }
+
+  .filter-btn {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .quick-tags-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    padding-bottom: 0.35rem;
+    width: 100%;
+  }
+
+  .quick-tag-pill {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Compact Project Card on mobile */
+  .project-media-wrapper {
+    height: 160px;
+  }
+
+  .project-content {
+    padding: 1.15rem 1rem;
+  }
+
+  .project-title {
+    font-size: 1.05rem;
+  }
+
+  .project-desc {
+    font-size: 0.84rem;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .btn-details-trigger {
+    width: 100%;
+    justify-content: center;
+    padding: 0.4rem 0;
+  }
+
+  .project-action-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-link-action {
+    flex: 1;
+    justify-content: center;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.76rem;
+  }
+
+  /* Featured Spotlight Mobile */
+  .spotlight-card {
+    border-radius: var(--radius-md);
+  }
+
+  .spotlight-grid {
+    padding: 1rem 0.85rem;
+    gap: 1.25rem;
+  }
+
+  .spotlight-main-img-box {
+    height: 200px;
+  }
+
+  .browser-url-pill {
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.65rem;
+  }
+
+  .browser-right-badge {
+    display: none;
+  }
+
+  .spotlight-thumb-btn {
+    width: 50px;
+    height: 32px;
+  }
+
+  .spotlight-title {
+    font-size: 1.35rem;
+  }
+
+  .spotlight-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .sim-products-grid {
     grid-template-columns: 1fr;
   }
 
+  .sim-product-chip {
+    padding: 0.55rem 0.75rem;
+    min-height: 44px;
+  }
+
+  .chip-name {
+    max-width: 160px;
+    font-size: 0.78rem;
+  }
+
+  .chip-price {
+    font-size: 0.78rem;
+  }
+
+  .sim-checkout-btn {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .spotlight-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .spotlight-actions .magnetic-wrapper,
+  .spotlight-actions a,
+  .spotlight-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Case Study Modal on iPhone */
+  .modal-backdrop-custom {
+    padding: 0.5rem;
+  }
+
+  .modal-dialog-custom {
+    padding: 1.25rem 0.95rem;
+    border-radius: var(--radius-md);
+    max-height: 94vh;
+  }
+
+  .modal-gallery-wrap {
+    height: 195px;
+  }
+
+  .modal-title-custom {
+    font-size: 1.25rem;
+    padding-right: 2rem;
+  }
+
+  .modal-thumb-btn {
+    width: 52px;
+    height: 34px;
+  }
+
+  .modal-project-switcher {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-nav-proj-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal-footer-custom {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .modal-footer-custom > div {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .modal-footer-custom .btn-modern {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Contact Section mobile */
+  .contact-channel-item {
+    padding: 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .channel-val {
+    font-size: 0.85rem;
+    word-break: break-all;
+  }
+
+  .contact-socials-row {
+    justify-content: center;
+  }
+
+  .contact-form-card .btn-modern {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Footer & Back to top button */
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-nav {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .back-to-top-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 44px;
+    height: 44px;
+  }
+
+  .scroll-progress-circle {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Compact Cell Phones (max-width: 380px) — iPhone SE, Galaxy Mini
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .hero-stats-strip {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Hide floating pills on tiny screens to guarantee zero horizontal scroll */
   .floating-pill {
     display: none;
   }
 
-  .spotlight-main-img-box {
-    height: 220px;
+  .profile-card-wrapper {
+    max-width: 240px;
+  }
+
+  .view-mode-btn span {
+    display: none;
+  }
+
+  .view-mode-btn {
+    padding: 0.35rem 0.55rem;
+  }
+
+  .filter-btn {
+    font-size: 0.74rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. iPhone Notch & Safe Area Inset Support (iPhone X/11/12/13/14/15/16)
+   -------------------------------------------------------------------------- */
+@supports (padding: max(0px)) {
+  .site-header {
+    padding-top: max(0px, env(safe-area-inset-top));
+    height: calc(var(--nav-height) + env(safe-area-inset-top));
+  }
+
+  .site-footer {
+    padding-bottom: max(2.5rem, calc(2rem + env(safe-area-inset-bottom)));
+  }
+
+  .back-to-top-btn {
+    bottom: max(1.25rem, calc(1rem + env(safe-area-inset-bottom)));
+    right: max(1.25rem, calc(1rem + env(safe-area-inset-right)));
+  }
+
+  .modal-dialog-custom {
+    padding-bottom: max(1.5rem, calc(1rem + env(safe-area-inset-bottom)));
   }
 }
