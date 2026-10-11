@@ -8,6 +8,9 @@ export default function CaseStudyModal({ project, allProjects = [], onSelectProj
 
   useEffect(() => {
     setCurrentImageIndex(0);
+    // Lock body scroll while modal is active
+    document.body.style.overflow = 'hidden';
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
       if (e.key === 'ArrowLeft') prevImage();
@@ -15,7 +18,10 @@ export default function CaseStudyModal({ project, allProjects = [], onSelectProj
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, [project]);
 
   if (!project) return null;

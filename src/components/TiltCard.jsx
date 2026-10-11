@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { soundFx } from '../utils/soundEffects';
 
 export default function TiltCard({
@@ -12,9 +12,16 @@ export default function TiltCard({
   const cardRef = useRef(null);
   const [transformStyle, setTransformStyle] = useState('');
   const [spotlightPos, setSpotlightPos] = useState({ x: 50, y: 50, opacity: 0 });
+  const [canHover, setCanHover] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches) {
+      setCanHover(true);
+    }
+  }, []);
 
   const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
+    if (!canHover || !cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -40,10 +47,11 @@ export default function TiltCard({
   };
 
   const handleMouseEnter = () => {
-    soundFx.playHover();
+    if (canHover) soundFx.playHover();
   };
 
   const handleMouseLeave = () => {
+    if (!canHover) return;
     setTransformStyle('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)');
     setSpotlightPos((prev) => ({ ...prev, opacity: 0 }));
   };
@@ -57,27 +65,29 @@ export default function TiltCard({
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
       style={{
-        transform: transformStyle,
+        transform: canHover ? transformStyle : undefined,
         transition: 'transform 0.15s ease-out, box-shadow 0.2s ease',
         position: 'relative',
         ...style
       }}
     >
-      {/* Spotlight Sheen Overlay */}
-      <div
-        className="tilt-card-spotlight"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          borderRadius: 'inherit',
-          pointerEvents: 'none',
-          zIndex: 3,
-          background: `radial-gradient(circle 280px at ${spotlightPos.x}% ${spotlightPos.y}%, rgba(6, 182, 212, 0.16), transparent 70%)`,
-          opacity: spotlightPos.opacity,
-          transition: 'opacity 0.3s ease'
-        }}
-        aria-hidden="true"
-      />
+      {/* Spotlight Sheen Overlay (Desktop hover only) */}
+      {canHover && (
+        <div
+          className="tilt-card-spotlight"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            borderRadius: 'inherit',
+            pointerEvents: 'none',
+            zIndex: 3,
+            background: `radial-gradient(circle 280px at ${spotlightPos.x}% ${spotlightPos.y}%, rgba(6, 182, 212, 0.16), transparent 70%)`,
+            opacity: spotlightPos.opacity,
+            transition: 'opacity 0.3s ease'
+          }}
+          aria-hidden="true"
+        />
+      )}
       {children}
     </div>
   );

@@ -3,8 +3,15 @@ import React, { useEffect, useState } from 'react';
 export default function CursorGlow() {
   const [pos, setPos] = useState({ x: -200, y: -200 });
   const [visible, setVisible] = useState(false);
+  const [isSupported, setIsSupported] = useState(false);
 
   useEffect(() => {
+    // Disable on touch devices to conserve CPU, battery, and rendering bandwidth
+    if (typeof window === 'undefined' || !window.matchMedia('(hover: hover)').matches) {
+      return;
+    }
+    setIsSupported(true);
+
     let animationFrame;
     let targetX = -200;
     let targetY = -200;
@@ -29,7 +36,7 @@ export default function CursorGlow() {
       animationFrame = requestAnimationFrame(animate);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     document.addEventListener('mouseleave', handleMouseLeave);
     animationFrame = requestAnimationFrame(animate);
 
@@ -39,6 +46,8 @@ export default function CursorGlow() {
       cancelAnimationFrame(animationFrame);
     };
   }, [visible]);
+
+  if (!isSupported) return null;
 
   return (
     <div

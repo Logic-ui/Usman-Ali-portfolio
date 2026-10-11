@@ -16,24 +16,29 @@ export default function Hero() {
 
   // Dynamic Typewriter effect
   useEffect(() => {
-    const currentRole = personalInfo.roles[roleIndex];
+    const currentRole = personalInfo.roles[roleIndex] || '';
     let timer;
 
-    if (!isDeleting && charIndex <= currentRole.length) {
-      setRoleText(currentRole.substring(0, charIndex));
-      if (charIndex === currentRole.length) {
-        timer = setTimeout(() => setIsDeleting(true), 2100);
+    if (!isDeleting) {
+      if (charIndex < currentRole.length) {
+        timer = setTimeout(() => {
+          setCharIndex((prev) => prev + 1);
+          setRoleText(currentRole.substring(0, charIndex + 1));
+        }, 80);
       } else {
-        timer = setTimeout(() => setCharIndex((prev) => prev + 1), 85);
+        timer = setTimeout(() => setIsDeleting(true), 2200);
       }
-    } else if (isDeleting && charIndex >= 0) {
-      setRoleText(currentRole.substring(0, charIndex));
-      if (charIndex === 0) {
-        setIsDeleting(false);
-        setRoleIndex((prev) => (prev + 1) % personalInfo.roles.length);
-        timer = setTimeout(() => { }, 350);
+    } else {
+      if (charIndex > 0) {
+        timer = setTimeout(() => {
+          setCharIndex((prev) => prev - 1);
+          setRoleText(currentRole.substring(0, charIndex - 1));
+        }, 40);
       } else {
-        timer = setTimeout(() => setCharIndex((prev) => prev - 1), 40);
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % personalInfo.roles.length);
+        }, 400);
       }
     }
 

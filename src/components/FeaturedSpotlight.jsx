@@ -176,8 +176,9 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
                         }}
                         onMouseEnter={() => soundFx.playHover()}
                         title={`View preview screen ${idx + 1}`}
+                        aria-label={`View preview screen ${idx + 1}`}
                       >
-                        <img src={img} alt={`Screen ${idx + 1}`} />
+                        <img src={img} alt={`${project.title} thumbnail preview ${idx + 1}`} loading="lazy" />
                       </button>
                     ))}
                   </div>
