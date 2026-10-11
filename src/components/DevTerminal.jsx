@@ -127,7 +127,7 @@ async def authenticate_user(
             disabled={isRunning}
           >
             <Play size={13} className={isRunning ? 'animate-spin text-amber-400' : 'text-emerald-400'} />
-            <span className="d-none d-sm-inline">Run</span>
+            <span className="terminal-run-text">Run</span>
           </button>
           <button
             type="button"

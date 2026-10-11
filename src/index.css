@@ -1414,6 +1414,19 @@ img {
   line-height: 1.65;
   color: #cbd5e1;
   overflow-x: auto;
+  max-width: 100%;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
+
+.terminal-run-text {
+  display: inline;
+}
+
+@media (max-width: 440px) {
+  .terminal-run-text {
+    display: none;
+  }
 }
 
 .terminal-console-output {
@@ -1426,6 +1439,15 @@ img {
   font-size: 0.78rem;
   color: #38bdf8;
   animation: fadeIn 0.3s ease;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.terminal-console-output pre {
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .console-indicator {
@@ -3729,19 +3751,23 @@ img {
 .modal-gallery-wrap {
   position: relative;
   width: 100%;
-  height: 360px;
+  height: clamp(240px, 42vw, 320px);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: #020617;
+  background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.95), #020617);
   border: 1px solid var(--border-color);
   margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-slide-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center;
+  padding: 6px;
 }
 
 .modal-img-counter {
@@ -4975,56 +5001,9 @@ img {
   }
 }
 
-/* --------------------------------------------------------------------------
-   1. Laptop & Landscape Tablet (max-width: 1024px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .container {
-    max-width: 960px;
-    padding: 0 1.5rem;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 3rem;
-  }
-
-  .hero-bio {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-roles,
-  .hero-tech-chips,
-  .hero-ctas,
-  .hero-socials {
-    justify-content: center;
-  }
-
-  .hero-visual {
-    order: -1;
-  }
-
-  .about-grid,
-  .contact-grid,
-  .spotlight-grid {
-    grid-template-columns: 1fr;
-    gap: 2.25rem;
-  }
-
-  .hero-stats-strip {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .project-card-list {
-    flex-direction: column;
-  }
-
-  .project-media-wrapper.list-media {
-    width: 100%;
-    height: 180px;
-    min-height: 180px;
+@media (min-width: 576px) {
+  .d-sm-inline {
+    display: inline !important;
   }
 }
 
@@ -5058,11 +5037,20 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   2. Tablet Portrait (max-width: 992px) — iPad, iPad Air, Android Tablets
+   1. Tablets (Landscape & Portrait: 769px - 1024px) & Small Laptops
    -------------------------------------------------------------------------- */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding: 0 1.5rem;
+  }
+
   /* Switch navbar to mobile header toggle & hide desktop nav pill */
   .desktop-nav-wrapper {
+    display: none !important;
+  }
+
+  .nav-resume-btn {
     display: none !important;
   }
 
@@ -5083,21 +5071,72 @@ img {
   }
 
   .section-wrapper {
-    padding: 5rem 0;
+    padding: 4.75rem 0;
   }
 
   .section-header {
-    margin-bottom: 2.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Hero Section on Tablet */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-roles {
+    justify-content: center;
+  }
+
+  .hero-bio {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 620px;
+  }
+
+  .hero-tech-chips,
+  .hero-ctas,
+  .hero-socials {
+    justify-content: center;
   }
 
   .profile-card-wrapper {
-    max-width: 320px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .hero-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+    margin-top: 2.5rem;
+  }
+
+  /* About Section on Tablet */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .about-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
   }
 
   /* Projects Section on Tablet */
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1.35rem;
   }
 
   .project-card-list {
@@ -5133,7 +5172,7 @@ img {
     justify-content: center;
   }
 
-  /* Spotlight on Tablet */
+  /* Featured Spotlight on Tablet */
   .spotlight-grid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
@@ -5163,6 +5202,10 @@ img {
     font-size: 0.76rem;
   }
 
+  .spotlight-main-img-box {
+    height: 190px;
+  }
+
   .blueprint-pipeline {
     flex-direction: column;
     gap: 0.65rem;
@@ -5178,9 +5221,24 @@ img {
     transform: rotate(90deg);
   }
 
-  /* Skills & Experience */
+  /* Skills & Experience on Tablet */
+  .skills-filter-nav {
+    gap: 0.45rem;
+    margin-bottom: 2rem;
+  }
+
+  .skills-filter-tab {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
   .skills-categories-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .gauges-card {
+    padding: 1.75rem 1.5rem;
   }
 
   .gauges-grid {
@@ -5196,12 +5254,22 @@ img {
 
   .contact-info-card,
   .contact-form-card {
-    padding: 1.5rem 1.35rem;
+    padding: 1.65rem 1.4rem;
+  }
+
+  /* Modal on Tablet */
+  .modal-dialog-custom {
+    padding: 1.75rem 1.35rem;
+    max-width: 92vw;
+  }
+
+  .modal-gallery-wrap {
+    height: 260px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   3. Small Tablets & Phablets (max-width: 768px)
+   2. Small Tablets & Phablets (max-width: 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   /* iOS Safari Zoom Prevention: inputs 16px */
@@ -5236,11 +5304,11 @@ img {
   /* Hero adjustments */
   .hero-section {
     padding-top: calc(var(--nav-height) + 1.25rem);
-    padding-bottom: 3.75rem;
+    padding-bottom: 3.5rem;
   }
 
   .hero-title {
-    font-size: clamp(2.25rem, 8vw, 3.15rem);
+    font-size: clamp(2.15rem, 7.5vw, 2.75rem);
   }
 
   .hero-roles {
@@ -5255,15 +5323,47 @@ img {
 
   .hero-stats-strip {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.85rem;
     margin-top: 2.25rem;
   }
 
+  .hero-grid,
+  .about-grid,
   .pillars-grid,
   .skills-categories-grid,
   .gauges-grid,
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .education-box {
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .dev-terminal-card {
+    border-radius: var(--radius-md);
+  }
+
+  .terminal-header {
+    padding: 0.65rem 0.85rem;
+  }
+
+  .terminal-body {
+    padding: 1rem 0.85rem;
+  }
+
+  .terminal-code {
+    font-size: 0.78rem;
+  }
+
+  .gauges-card {
+    padding: 1.35rem 1.15rem;
   }
 
   /* Projects Section on Mobile */
@@ -5273,7 +5373,7 @@ img {
   }
 
   .project-media-wrapper {
-    height: clamp(130px, 34vw, 145px);
+    height: 140px;
   }
 
   .project-actions {
@@ -5300,6 +5400,11 @@ img {
     font-size: 0.78rem;
   }
 
+  /* Spec Matrix touch scroll */
+  .spec-matrix-table {
+    min-width: 620px;
+  }
+
   /* Featured Spotlight on Mobile */
   .spotlight-grid {
     padding: 1.25rem 1rem;
@@ -5307,7 +5412,7 @@ img {
   }
 
   .spotlight-main-img-box {
-    height: clamp(165px, 38vw, 195px);
+    height: 180px;
   }
 
   .spotlight-thumbnails-row {
@@ -5457,12 +5562,12 @@ img {
 
   /* Modal responsive on tablet/mobile */
   .modal-dialog-custom {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1.15rem;
     max-width: 95vw;
   }
 
   .modal-gallery-wrap {
-    height: 240px;
+    height: 230px;
   }
 
   .terminal-tabs {
@@ -5471,7 +5576,7 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   4. Cell Phones & iPhones (max-width: 576px) — iPhone 12/13/14/15/16, Galaxy, Pixel
+   3. Cell Phones & iPhones (max-width: 576px) — iPhone 12/13/14/15/16, Galaxy, Pixel
    -------------------------------------------------------------------------- */
 @media (max-width: 576px) {
   .container {
@@ -5487,8 +5592,22 @@ img {
     height: calc(var(--nav-height) - 8px);
   }
 
+  .nav-brand {
+    gap: 0.65rem;
+    min-width: 0;
+  }
+
+  .brand-info {
+    max-width: 160px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
   .brand-name {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .brand-badge-animated {
@@ -5511,7 +5630,7 @@ img {
   /* Hero Section for mobile */
   .hero-section {
     padding-top: calc(var(--nav-height) + 1rem);
-    padding-bottom: 3.25rem;
+    padding-bottom: 3rem;
   }
 
   .status-pill-animated {
@@ -5525,30 +5644,35 @@ img {
   }
 
   .hero-title {
-    font-size: 2.35rem;
+    font-size: clamp(1.95rem, 6.8vw, 2.3rem);
     letter-spacing: -0.03em;
   }
 
   .hero-roles {
-    font-size: 1.05rem;
-    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 
   .hero-bio {
-    font-size: 0.92rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 1.35rem;
+  }
+
+  .hero-tech-chips {
+    gap: 0.35rem;
+    margin-bottom: 1.75rem;
   }
 
   .tech-chip-interactive {
-    font-size: 0.74rem;
-    padding: 0.32rem 0.65rem;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.6rem;
   }
 
   .hero-ctas {
     flex-direction: column;
     width: 100%;
-    gap: 0.75rem;
+    gap: 0.7rem;
   }
 
   .hero-ctas .magnetic-wrapper {
@@ -5558,37 +5682,228 @@ img {
   .hero-ctas .btn-modern {
     width: 100%;
     justify-content: center;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1.15rem;
   }
 
   .profile-card-wrapper {
-    max-width: 260px;
+    max-width: 250px;
+    margin: 0 auto;
   }
 
+  /* Orbit pills hidden on mobile phones to guarantee zero horizontal overflow */
   .floating-pill {
+    display: none !important;
+  }
+
+  /* Compact 2x2 stats dashboard grid on mobile phones */
+  .hero-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-top: 1.75rem;
+  }
+
+  .stat-item {
+    padding: 1rem 0.85rem;
+  }
+
+  .stat-number {
+    font-size: 1.85rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .stat-sub {
     font-size: 0.68rem;
-    padding: 0.35rem 0.65rem;
-    transform: scale(0.85);
   }
 
-  .pill-python {
-    left: -10px;
-    top: 8%;
+  /* About Section on Mobile */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
   }
 
-  .pill-react {
-    right: -10px;
-    top: 8%;
+  .about-card {
+    padding: 1.25rem 0.95rem;
+    border-radius: var(--radius-md);
   }
 
-  .pill-fastapi {
-    left: -10px;
-    bottom: 15%;
+  .about-title {
+    font-size: 1.18rem;
+    margin-bottom: 0.85rem;
   }
 
-  .pill-docker {
-    right: -10px;
-    bottom: 15%;
+  .about-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .education-box {
+    padding: 0.95rem;
+    margin-top: 1.25rem;
+  }
+
+  .edu-degree {
+    font-size: 0.95rem;
+  }
+
+  .edu-school {
+    font-size: 0.82rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .pillar-card {
+    padding: 1rem 0.85rem;
+  }
+
+  .pillar-title {
+    font-size: 0.95rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  /* Experience Section on Mobile */
+  .experience-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-light-stream {
+    left: 7px;
+  }
+
+  .exp-dot-pulse {
+    left: -1.5rem;
+    width: 16px;
+    height: 16px;
+  }
+
+  .exp-card {
+    padding: 1.15rem 0.95rem;
+    border-radius: var(--radius-md);
+  }
+
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .exp-company {
+    font-size: 1.12rem;
+  }
+
+  .exp-role-strip {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .exp-bullets li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    padding-left: 1.15rem;
+  }
+
+  /* Skills Section on Mobile */
+  .skills-filter-nav {
+    gap: 0.35rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .skills-filter-tab {
+    font-size: 0.74rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .skill-category-card {
+    padding: 1.15rem 0.95rem;
+    border-radius: var(--radius-md);
+  }
+
+  .category-header {
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .cat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cat-title {
+    font-size: 1.05rem;
+  }
+
+  .skill-chips-list {
+    gap: 0.35rem;
+  }
+
+  .skill-badge-enhanced {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .skills-marquee-container {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  }
+
+  .gauges-card {
+    padding: 1.15rem 0.85rem;
+    border-radius: var(--radius-md);
+  }
+
+  .gauges-title {
+    font-size: 1.05rem;
+  }
+
+  /* Terminal on Mobile */
+  .dev-terminal-card {
+    border-radius: var(--radius-md);
+  }
+
+  .terminal-header {
+    padding: 0.65rem 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .terminal-tabs {
+    gap: 0.35rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100%;
+  }
+
+  .terminal-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .terminal-tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.72rem;
+  }
+
+  .terminal-body {
+    padding: 1rem 0.85rem;
+  }
+
+  .terminal-code {
+    font-size: 0.76rem;
   }
 
   /* Portfolio Control Panel on Mobile */
@@ -5693,7 +6008,7 @@ img {
   }
 
   .spotlight-main-img-box {
-    height: 165px;
+    height: 160px;
   }
 
   .spotlight-thumb-btn {
@@ -5728,6 +6043,18 @@ img {
     font-size: 0.78rem;
   }
 
+  .sim-item-info {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .sim-item-name {
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .sim-checkout-btn {
     padding: 0.75rem;
     font-size: 0.85rem;
@@ -5749,13 +6076,13 @@ img {
   }
 
   .modal-title-custom {
-    font-size: 1.25rem;
-    padding-right: 2rem;
+    font-size: 1.2rem;
+    padding-right: 2.25rem;
   }
 
   .modal-thumb-btn {
-    width: 52px;
-    height: 34px;
+    width: 50px;
+    height: 32px;
   }
 
   .modal-project-switcher {
@@ -5861,18 +6188,18 @@ img {
   .back-to-top-btn {
     bottom: 1.25rem;
     right: 1.25rem;
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
 
   .scroll-progress-circle {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   5. Compact Mobile Phones (max-width: 440px) — Galaxy A, iPhone SE, Pixel Fold
+   4. Compact Mobile Phones (max-width: 440px) — Galaxy A, iPhone SE, Pixel Fold
    -------------------------------------------------------------------------- */
 @media (max-width: 440px) {
   /* On compact phones, hide header sound switch button since it's inside drawer */
@@ -5912,25 +6239,50 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   6. Ultra Compact Cell Phones (max-width: 380px)
+   5. Ultra Compact Cell Phones (max-width: 380px)
    -------------------------------------------------------------------------- */
 @media (max-width: 380px) {
+  .brand-name {
+    font-size: 0.8rem;
+    max-width: 130px;
+  }
+
+  .brand-badge-animated {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .theme-switch-btn,
+  .mobile-nav-toggle {
+    width: 32px;
+    height: 32px;
+  }
+
   .hero-title {
-    font-size: 2.1rem;
+    font-size: 1.85rem;
+  }
+
+  .hero-roles {
+    font-size: 0.92rem;
   }
 
   .hero-stats-strip {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
   }
 
   /* Hide floating pills on tiny screens to guarantee zero horizontal scroll */
   .floating-pill {
-    display: none;
+    display: none !important;
   }
 
   .profile-card-wrapper {
-    max-width: 230px;
+    max-width: 220px;
   }
 
   .view-mode-btn span {
@@ -5938,12 +6290,12 @@ img {
   }
 
   .view-mode-btn {
-    padding: 0.35rem 0.55rem;
+    padding: 0.35rem 0.45rem;
   }
 
   .filter-btn {
-    font-size: 0.72rem;
-    padding: 0.35rem 0.65rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.55rem;
   }
 
   .project-media-wrapper {
@@ -5951,17 +6303,30 @@ img {
   }
 
   .spotlight-main-img-box {
-    height: 150px;
+    height: 145px;
+  }
+
+  .gauges-card {
+    padding: 0.95rem 0.75rem;
   }
 
   .contact-info-card,
   .contact-form-card {
-    padding: 1rem 0.75rem;
+    padding: 0.95rem 0.7rem;
+  }
+
+  .contact-channel-item {
+    padding: 0.55rem 0.65rem;
+  }
+
+  .topic-chip {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.5rem;
   }
 }
 
 /* --------------------------------------------------------------------------
-   7. iPhone Notch & Safe Area Inset Support (iPhone X/11/12/13/14/15/16)
+   6. iPhone Notch & Safe Area Inset Support (iPhone X/11/12/13/14/15/16)
    -------------------------------------------------------------------------- */
 @supports (padding: max(0px)) {
   .site-header {

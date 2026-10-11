@@ -135,12 +135,12 @@ export default function Navbar({ theme, toggleTheme }) {
                 {soundEnabled ? <Volume2 size={16} className="text-cyan-400" /> : <VolumeX size={16} />}
               </button>
 
-              {/* Desktop Resume Download (>= 768px) */}
+              {/* Desktop Resume Download (>= 860px) */}
               <a
                 href={personalInfo.cvFile}
                 download
                 onClick={() => soundFx.playChime()}
-                className="btn-modern btn-outline-glass btn-sm d-none d-md-inline-flex"
+                className="btn-modern btn-outline-glass btn-sm nav-resume-btn"
                 title="Download CV"
               >
                 <Download size={14} /> Resume
