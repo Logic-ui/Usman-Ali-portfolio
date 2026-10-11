@@ -65,6 +65,7 @@ export default function ProjectCard({ project, index, layout = 'grid', onOpenCas
         {/* Media Carousel Header */}
         <div className={`project-media-wrapper ${isList ? 'list-media' : ''}`}>
           <div className="project-top-badges">
+            <span className="project-serial-badge font-mono">#{projectSerial}</span>
             <span className="project-badge-tag">{project.badge}</span>
           </div>
 

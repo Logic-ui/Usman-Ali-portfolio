@@ -36,10 +36,10 @@ export default function Portfolio() {
   }, []);
 
   const filterButtons = [
-    { label: `All Systems (${projects.length})`, value: 'all' },
-    { label: 'Full-Stack & React', value: 'fullstack' },
-    { label: 'Python & APIs', value: 'backend' },
-    { label: 'Data & Geospatial', value: 'data' },
+    { label: 'All Systems', count: projects.length, value: 'all', icon: Layers },
+    { label: 'Full-Stack & React', count: 4, value: 'fullstack', icon: Globe },
+    { label: 'Python & APIs', count: 6, value: 'backend', icon: Cpu },
+    { label: 'Data & Geospatial', count: 3, value: 'data', icon: Database },
   ];
 
   const popularTags = [
@@ -101,20 +101,25 @@ export default function Portfolio() {
           <div className="portfolio-controls-top">
             {/* Main Category Tabs */}
             <div className="portfolio-filters" role="tablist">
-              {filterButtons.map((btn) => (
-                <button
-                  key={btn.value}
-                  type="button"
-                  className={`filter-btn ${filter === btn.value ? 'active' : ''}`}
-                  onClick={() => {
-                    soundFx.playPop();
-                    setFilter(btn.value);
-                  }}
-                  onMouseEnter={() => soundFx.playHover()}
-                >
-                  {btn.label}
-                </button>
-              ))}
+              {filterButtons.map((btn) => {
+                const Icon = btn.icon;
+                return (
+                  <button
+                    key={btn.value}
+                    type="button"
+                    className={`filter-btn ${filter === btn.value ? 'active' : ''}`}
+                    onClick={() => {
+                      soundFx.playPop();
+                      setFilter(btn.value);
+                    }}
+                    onMouseEnter={() => soundFx.playHover()}
+                  >
+                    <Icon size={14} className="filter-btn-icon" />
+                    <span>{btn.label}</span>
+                    <span className="filter-count font-mono">{btn.count}</span>
+                  </button>
+                );
+              })}
             </div>
 
             {/* View Mode Toggle: Grid vs Split List vs Matrix */}
