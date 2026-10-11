@@ -147,12 +147,6 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
                         <span className="dot yellow" />
                         <span className="dot green" />
                       </div>
-                      <div className="browser-url-pill font-mono">
-                        <span>https://retailpulse.io/pos-terminal</span>
-                      </div>
-                      <div className="browser-right-badge font-mono">
-                        v2.4 Live
-                      </div>
                     </div>
 
                     <div className="spotlight-main-img-box">
