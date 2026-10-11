@@ -711,7 +711,7 @@ END:VCARD`;
                   </div>
 
                   {/* Submit Button */}
-                  <MagneticButton strength={15}>
+                  <MagneticButton strength={15} style={{ width: '100%', display: 'block' }}>
                     <button
                       type="submit"
                       disabled={isSubmitting}

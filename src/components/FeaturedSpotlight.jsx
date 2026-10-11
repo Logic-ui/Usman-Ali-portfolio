@@ -107,7 +107,9 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
               setActiveTab('visual');
             }}
           >
-            <Layers size={14} /> UI Showcase
+            <Layers size={14} />
+            <span className="tab-desktop-text">UI Showcase</span>
+            <span className="tab-mobile-text">Showcase</span>
           </button>
           <button
             type="button"
@@ -117,7 +119,9 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
               setActiveTab('simulator');
             }}
           >
-            <Terminal size={14} /> Interactive POS Simulator
+            <Terminal size={14} />
+            <span className="tab-desktop-text">POS Simulator</span>
+            <span className="tab-mobile-text">Simulator</span>
           </button>
           <button
             type="button"
@@ -127,7 +131,9 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
               setActiveTab('blueprint');
             }}
           >
-            <Cpu size={14} /> Architecture Blueprint
+            <Cpu size={14} />
+            <span className="tab-desktop-text">Architecture</span>
+            <span className="tab-mobile-text">Blueprint</span>
           </button>
         </div>
       </div>
@@ -193,11 +199,11 @@ export default function FeaturedSpotlight({ project, onOpenCaseStudy }) {
                       <span className="sim-dot yellow" />
                       <span className="sim-dot red" />
                       <span className="sim-title font-mono">
-                        RETAILPULSE // CLOUD_POS_TERMINAL.SIM
+                        RETAILPULSE <span className="sim-title-sub">// CLOUD_POS.SIM</span>
                       </span>
                     </div>
                     <span className="sim-status font-mono">
-                      <Zap size={12} className="text-cyan-400" /> ACID TRANSACTION ENGINE
+                      <Zap size={12} className="text-cyan-400" /> ACID ENGINE
                     </span>
                   </div>
 

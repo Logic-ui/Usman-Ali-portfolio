@@ -126,10 +126,11 @@ export default function Portfolio() {
                   soundFx.playPop();
                   setViewMode('grid');
                 }}
-                title="Compact 3D Card Showcase Grid"
+                title="Compact Showcase Grid"
               >
                 <LayoutGrid size={15} />
-                <span>Showcase Grid</span>
+                <span className="view-btn-text-desktop">Showcase Grid</span>
+                <span className="view-btn-text-mobile">Grid</span>
               </button>
               <button
                 type="button"
@@ -138,10 +139,11 @@ export default function Portfolio() {
                   soundFx.playPop();
                   setViewMode('list');
                 }}
-                title="Horizontal Compact Split Cards"
+                title="Split List Layout"
               >
                 <List size={15} />
-                <span>Split List</span>
+                <span className="view-btn-text-desktop">Split List</span>
+                <span className="view-btn-text-mobile">List</span>
               </button>
               <button
                 type="button"
@@ -150,10 +152,11 @@ export default function Portfolio() {
                   soundFx.playPop();
                   setViewMode('matrix');
                 }}
-                title="Architecture Spec Matrix"
+                title="Engineering Spec Matrix"
               >
                 <TableIcon size={15} />
-                <span>Spec Matrix</span>
+                <span className="view-btn-text-desktop">Spec Matrix</span>
+                <span className="view-btn-text-mobile">Matrix</span>
               </button>
             </div>
           </div>
@@ -164,7 +167,7 @@ export default function Portfolio() {
             <input
               type="text"
               className="search-input"
-              placeholder="Search by tech or keyword (e.g. FastAPI, Leaflet, PostgreSQL, JWT, Docker...)"
+              placeholder="Search tech stack, keyword or system (FastAPI, React, SQL...)"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
